@@ -1,0 +1,7 @@
+.atropos-avatar .atropos-shadow {
+  background: linear-gradient(to top right, #facc15, #ec4899, #a855f7);
+  filter: blur(36px);
+  opacity: 0.1;
+  pointer-events: none;
+  border-radius: 9999px;
+}
