@@ -39,9 +39,9 @@ function App() {
             <Skill />
           </section>
 
-          <section id="skill">
+          {/* <section id="skill">
             <Section />
-          </section>
+          </section> */}
         </div>
       </div>
     </>

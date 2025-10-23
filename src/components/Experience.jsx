@@ -1,36 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const experienceData = {
-  work: [
-    {
-      title: " HELIGATE JOINT STOCK COMPANY",
-      role: "Intern Frontend Developer",
-      description: [
-        "Develop website UI using React and Shadcn UI.",
-        "Connect the UI with the API response",
-      ],
-      tech: ["HTML", "CSS", "Javascript", "React", "ShadcnUI", "MobX"],
-    },
-    {
-      title: "ICETEA LABS CAREERS",
-      role: "React Develope",
-      description: [
-        "Develop website using NextJs",
-        "Self-taught and update new technology",
-      ],
-      tech: ["NodeJS", "NextJs", "Zustand", "MUI"],
-    },
-  ],
-  education: [
-    {
-      title: "University of Transport, Ho Chi Minh City",
-      description: ["Majoring in Information Technology."],
-      tech: ["2023 - Present"],
-    },
-  ],
-};
-
 export default function Experience() {
   const [activeTab, setActiveTab] = useState("work");
 
@@ -152,3 +122,33 @@ export default function Experience() {
     </section>
   );
 }
+
+const experienceData = {
+  work: [
+    {
+      title: " HELIGATE JOINT STOCK COMPANY",
+      role: "Intern Frontend Developer",
+      description: [
+        "Develop website UI using React and Shadcn UI.",
+        "Connect the UI with the API response",
+      ],
+      tech: ["HTML", "CSS", "Javascript", "React", "ShadcnUI", "MobX"],
+    },
+    {
+      title: "ICETEA LABS CAREERS",
+      role: "React Develope",
+      description: [
+        "Develop website using NextJs",
+        "Self-taught and update new technology",
+      ],
+      tech: ["NodeJS", "NextJs", "Zustand", "MUI"],
+    },
+  ],
+  education: [
+    {
+      title: "University of Transport, Ho Chi Minh City",
+      description: ["Majoring in Information Technology."],
+      tech: ["2023 - Present"],
+    },
+  ],
+};

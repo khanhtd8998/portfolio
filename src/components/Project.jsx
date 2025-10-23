@@ -8,7 +8,8 @@ export default function Project() {
       variants={container}
       initial="hidden"
       whileInView="show"
-      // viewport={{ once: false, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.4, ease: "linear" }}
     >
       {/* Header */}
       <motion.div variants={item} className="text-center mb-8">
@@ -29,7 +30,7 @@ export default function Project() {
           <motion.div
             key={proj.title}
             variants={item}
-            whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            whileHover={{ y: -8, transition: { duration: 0.2 } }}
             className={`relative flex flex-col bg-white/90 backdrop-blur-md rounded-2xl border ${
               proj.featured
                 ? "border-yellow-400 shadow-[0_12px_35px_rgba(0,0,0,0.08)]"
@@ -163,7 +164,7 @@ const projects = [
 ];
 
 const container = {
-  hidden: { opacity: 0 },
+  // hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: { staggerChildren: 0.2 },
@@ -172,5 +173,5 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.1 } },
 };

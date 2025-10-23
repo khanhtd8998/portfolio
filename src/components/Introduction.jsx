@@ -14,7 +14,8 @@ export default function Introduction() {
   const handleScrollToProjects = () => {
     const section = document.getElementById("project");
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const y = section.getBoundingClientRect().top + window.scrollY - 50;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
