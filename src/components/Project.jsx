@@ -4,7 +4,7 @@ export default function Project() {
   return (
     <motion.section
       id="projects"
-      className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-16 overflow-hidden"
+      className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 overflow-hidden"
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -12,7 +12,7 @@ export default function Project() {
       transition={{ duration: 0.4, ease: "linear" }}
     >
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-6"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -29,7 +29,7 @@ export default function Project() {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-text-title"
+          className="text-3xl md:text-4xl lg:text-6xl font-bold text-title-gradient"
         >
           My Projects
         </motion.h2>
@@ -42,7 +42,7 @@ export default function Project() {
             delay: 0.2,
             ease: "easeOut",
           }}
-          className="text-gray-600 mt-3 text-md"
+          className="text-gray-600 dark:text-gray-200 mt-3 text-md"
         >
           Some of my highlighted works and experiments
         </motion.p>
@@ -58,10 +58,10 @@ export default function Project() {
             key={proj.title}
             variants={item}
             whileHover={{ y: -8, transition: { duration: 0.2 } }}
-            className={`relative flex flex-col bg-white/90 backdrop-blur-md rounded-2xl border ${
+            className={`relative flex flex-col bg-white/90 dark:bg-gray-900 backdrop-blur-md rounded-2xl border ${
               proj.featured
-                ? "border-yellow-400 shadow-[0_12px_35px_rgba(0,0,0,0.08)]"
-                : "border-gray-200 shadow-sm hover:shadow-md"
+                ? "border-nimevoli shadow-[0_12px_35px_rgba(0,0,0,0.08)]"
+                : "dark:border-gray-800 dark:hover:border-gray-700 shadow-[var(--shadow-glow)]"
             } transition-all overflow-hidden`}
           >
             {/* Featured tag */}
@@ -72,7 +72,7 @@ export default function Project() {
             )}
 
             {/* Image */}
-            <div className="w-full h-48 bg-gray-100 overflow-hidden">
+            <div className="w-full h-48 bg-gray-100 dark:bg-gray-800 overflow-hidden">
               <img
                 src={proj.image}
                 alt={proj.title}
@@ -82,13 +82,13 @@ export default function Project() {
 
             {/* Content */}
             <div className="flex flex-col flex-1 justify-between p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
                 {proj.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">{proj.description}</p>
+              <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">{proj.description}</p>
 
               <div>
-                <p className="text-sm font-semibold text-gray-700 mb-2">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   Technologies:
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">

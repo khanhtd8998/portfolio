@@ -56,12 +56,11 @@ const AboutMeV2 = () => {
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        // viewport={{ once: true }}
-
-        className="flex-shrink-0"
+        viewport={{ once: true }}
+        className="flex-shrink-0 hidden md:block"
       >
         <img
-          src="./avatar.jpg" // đổi thành ảnh của bạn
+          src="./avatar.jpg"
           alt="Profile"
           className="w-72 h-72 md:w-80 md:h-80 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.1)] object-cover"
         />
@@ -77,10 +76,10 @@ const AboutMeV2 = () => {
         className="flex-1 space-y-6 text-center md:text-left"
       >
         <div>
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-2 text-text-title">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-2 text-title-gradient">
             About Me
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
             I'm a freshman majoring in Information Technology at the University
             of Transport in Ho Chi Minh City. I have a passion for building
             innovative and impactful applications, and my goal is to become a
@@ -98,11 +97,15 @@ const AboutMeV2 = () => {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               // viewport={{ once: true }}
             >
-              <Card className="border border-gray-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
+              <Card className="border border-gray-200 dark:border-gray-700 dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
                 <CardContent className="flex items-center gap-3 py-3">
-                  <div className="text-gray-500">{item.icon}</div>
+                  <div className="text-gray-600 dark:text-gray-200">
+                    {item.icon}
+                  </div>
                   <div className="text-left">
-                    <p className="text-xs text-gray-500">{item.label}</p>
+                    <p className="text-xs text-gray-600 dark:text-gray-200 uppercase">
+                      {item.label}
+                    </p>
                     <p className="font-medium break-all text-balance">
                       {item.value}
                     </p>
@@ -140,7 +143,7 @@ const AboutMeV2 = () => {
               boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
             }}
             whileTap={{ scale: 0.98 }}
-            className="flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-white border border-gray-300 px-5 py-2 rounded-lg shadow-sm transition-all"
+            className="dark:text-black flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-white border border-gray-300 px-5 py-2 rounded-lg shadow-sm transition-all"
           >
             Contact Me <Contact size={16} />
           </motion.button>

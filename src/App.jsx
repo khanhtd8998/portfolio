@@ -3,7 +3,6 @@ import Experience from "./components/Experience";
 import HeaderV2 from "./components/HeaderV2";
 import Introduction from "./components/Introduction";
 import Project from "./components/Project";
-import Section from "./components/Section";
 import Skill from "./components/Skill";
 import Skills from "./components/Skills";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -11,19 +10,21 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 function App() {
   return (
     <>
-      <div className="min-h-screen w-full bg-white relative overflow-x-hidden">
+      <div className="min-h-screen w-full bg-white dark:bg-black relative overflow-x-hidden">
         <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, transparent, transparent 2px, #f3f4f6 2px, #f3f4f6 4px)",
-          }}
+          className="
+    absolute inset-0 z-0
+    bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#f3f4f6_2px,#f3f4f6_4px)]
+    dark:bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#1f2937_2px,#1f2937_4px)]
+  "
         />
-        <div className="relative z-10 p-10">
+        <div className="relative z-10 p-6 md:p-10">
           <HeaderV2 />
           <section id="home">
             <Introduction />
-            <AnimatedThemeToggler className="absolute top-4 right-4 z-10" />
+            <div className="size-10 fixed top-20 md:top-10.5 right-4 z-10 bg-white/95 dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center">
+              <AnimatedThemeToggler />
+            </div>
           </section>
 
           <section id="about">
@@ -42,12 +43,8 @@ function App() {
             <Skills />
           </section>
 
-          <section id="skill">
-            <Skill />
-          </section>
-
           {/* <section id="skill">
-            <Section />
+            <Skill />
           </section> */}
         </div>
       </div>

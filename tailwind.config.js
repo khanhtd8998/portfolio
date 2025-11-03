@@ -13,6 +13,22 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        xs: "360px", // Galaxy S8, iPhone SE
+        sm: "480px", // iPhone Pro, Pixel
+        // Tablet nhỏ
+        md: "768px", // iPad Mini
+        // Tablet lớn / Laptop nhỏ
+        lg: "1024px",
+        // Laptop phổ biến
+        xl: "1280px",
+        // Màn hình lớn
+        "2xl": "1536px",
+        // Màn hình siêu rộng (2K, Ultrawide)
+        "3xl": "1920px",
+        // Màn hình cực lớn (4K)
+        "4xl": "2560px",
+      },
       fontFamily: {
         sans: ["Roboto", ...fontFamily.sans],
       },

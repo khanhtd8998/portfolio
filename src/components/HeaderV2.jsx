@@ -62,16 +62,16 @@ export default function HeaderV2() {
   }, [open]);
 
   return (
-    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4">
+    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-auto max-w-4xl px-4">
       {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center justify-evenly gap-3 rounded-full bg-white/80 backdrop-blur-md shadow-md px-6 py-2">
+      <nav className="hidden md:flex items-center justify-evenly gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-6 py-2">
         {navItems.map((item) => {
           const isActive = item.id === activeId;
           return (
             <button
               key={item.id}
               onClick={() => handleScrollTo(item.id)}
-              className="relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors"
+              className="relative flex items-center gap-2 rounded-full px-4 py-2 text-sm md:text-md font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             >
               {isActive && (
                 <motion.div
@@ -97,9 +97,9 @@ export default function HeaderV2() {
       <div className="md:hidden flex justify-end">
         <button
           onClick={() => setOpen(!open)}
-          className="bg-white/90 backdrop-blur-md shadow-md p-2 rounded-full"
+          className="bg-white/90 dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] p-2 rounded-full"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X className="dark:text-white" size={22} /> : <Menu className="dark:text-white" size={22} />}
         </button>
       </div>
 
@@ -111,7 +111,7 @@ export default function HeaderV2() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-8 w-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 bg-white/95 backdrop-blur-md shadow-lg rounded-2xl p-4 md:hidden"
+            className="absolute top-12 w-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 bg-white/95 dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] rounded-2xl p-4 md:hidden"
           >
             {navItems.map((item) => {
               const isActive = item.id === activeId;
@@ -119,10 +119,10 @@ export default function HeaderV2() {
                 <button
                   key={item.id}
                   onClick={() => handleScrollTo(item.id)}
-                  className={`flex justify-start w-32 items-center gap-2 text-sm font-medium transition-colors ${
+                  className={`flex justify-start items-center w-32 gap-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-indigo-600"
-                      : "text-gray-600 hover:text-black"
+                      ? "text-indigo-600 font-semibold"
+                      : "text-gray-600 dark:text-gray-200 hover:text-black"
                   }`}
                 >
                   {item.icon}

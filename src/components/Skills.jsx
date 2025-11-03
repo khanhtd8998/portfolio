@@ -40,7 +40,7 @@ const Skills = () => {
     >
       {/* Header */}
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-6"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
@@ -57,7 +57,7 @@ const Skills = () => {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-text-title"
+          className="text-3xl md:text-4xl lg:text-6xl font-bold text-title-gradient"
         >
           My Tech Stack
         </motion.h2>
@@ -70,7 +70,7 @@ const Skills = () => {
             delay: 0.2,
             ease: "easeOut",
           }}
-          className="text-gray-600 mt-3 text-md"
+          className="text-gray-600 dark:text-gray-200 mt-3 text-md"
         >
           Technologies I use to craft beautiful, efficient, and scalable web
           apps.
@@ -86,18 +86,18 @@ const Skills = () => {
           delay: 0.2,
           ease: "easeOut",
         }}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-5 w-full"
+        className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-5 w-full"
       >
         {skills.map(({ name, slug, isCdn }, i) => (
           <Atropos
             key={i}
             activeOffset={40}
             shadowScale={1.05}
-            className="atropos-avatar w-[120px] h-[120px] md:w-[140px] md:h-[140px] animate-fade-in-up"
+            className="atropos-avatar w-[84px] h-[84px] md:w-[96px] md:h-[96px] lg:w-[120px] lg:h-[120px] xl:w-[144px] xl:h-[144px] animate-fade-in-up mx-auto"
           >
             <div
               className="group relative w-full h-full rounded-2xl 
-              bg-white/70 backdrop-blur-md border border-white/50 
+              bg-white/80 backdrop-blur-md border border-white/50 
               shadow-[0_4px_20px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center 
               transition-all duration-700 hover:-translate-y-2 
               hover:shadow-[0_0_25px_rgba(99,102,241,0.4)]"
@@ -123,7 +123,7 @@ const Skills = () => {
               />
 
               {/* text */}
-              <span className="text-sm font-medium text-neutral-700 group-hover:text-indigo-600 transition-colors duration-300 relative z-10">
+              <span className="text-sm font-medium text-neutral-700 dark:text-black/90 group-hover:text-indigo-600 transition-colors duration-300 relative z-10">
                 {name}
               </span>
             </div>

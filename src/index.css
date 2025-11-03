@@ -12,6 +12,8 @@
   --bg-primary: #4a5ce3;
   --text-1: #172c66;
   --text-title: #4a5ce3;
+  --shadow-glow: 0 0 15px rgba(0, 0, 0, 0.1);
+  --text-title-gradient: linear-gradient(to right, #6366f1, #a855f7);
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -94,6 +96,9 @@ html {
 }
 
 .dark {
+  --shadow-glow: 0 0 15px rgba(255, 255, 255, 0.15);
+  --text-title-gradient: linear-gradient(to right, #a855f7, #6366f1);
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -144,4 +149,10 @@ html {
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+
+.text-title-gradient {
+  background: var(--text-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

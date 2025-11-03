@@ -9,7 +9,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="min-h-[50vh] max-w-7xl mx-auto flex flex-col items-center justify-start py-20 overflow-hidden"
+      className="min-h-[50vh] max-w-7xl mx-auto flex flex-col items-center justify-start py-10 md:py-16 overflow-hidden"
     >
       {/* Title */}
       <motion.div
@@ -30,7 +30,7 @@ export default function Experience() {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-text-title"
+          className="text-3xl md:text-4xl lg:text-6xl font-bold text-title-gradient"
         >
           Work Experience
         </motion.h2>
@@ -43,14 +43,14 @@ export default function Experience() {
             delay: 0.2,
             ease: "easeOut",
           }}
-          className="text-gray-600 mt-3 text-md"
+          className="text-gray-600 dark:text-gray-200 mt-3 text-md"
         >
           Explore the practical experiences I have accumulated
         </motion.p>
       </motion.div>
 
       {/* Tabs */}
-      <div className="flex gap-4 mb-10 bg-gray-100 p-2 rounded-full">
+      <div className="flex gap-4 mb-10 bg-white/80 dark:bg-gray-900 dark:shadow-[0_0_15px_rgba(255,255,255,0.15)] shadow-[0_0_15px_rgba(1,1,1,0.15)] p-2 rounded-full">
         {["work", "education"].map((tab) => (
           <button
             key={tab}
@@ -66,7 +66,9 @@ export default function Experience() {
             )}
             <span
               className={`relative z-10 ${
-                activeTab === tab ? "text-white" : "text-gray-700"
+                activeTab === tab
+                  ? "text-white"
+                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
               }`}
             >
               {tab === "work" ? "Work Experience" : "Education"}
@@ -91,17 +93,17 @@ export default function Experience() {
                 key={exp.title}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="p-6 bg-white/80 rounded-lg shadow-elevated backdrop-blur-md hover:border hover:border-gradient-primary border border-gray-100 hover:shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-shadow"
+                className="p-6 bg-white/80 dark:bg-gray-900 rounded-lg backdrop-blur-md hover:border hover:border-gradient-primary border border-gray-100 dark:border-gray-800 dark:hover:border-gray-700 shadow-[var(--shadow-glow)] transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
                   {exp.title}
                 </h3>
-                <ul className="text-gray-600 text-sm mb-3 list-disc pl-4">
+                <ul className="text-gray-600 dark:text-gray-200 text-sm mb-3 list-disc pl-4">
                   {exp.description?.map((item, index) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
-                <p className="text-sm font-medium text-gray-700 mb-2">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   {activeTab === "work" ? "Technologies used:" : "Time"}
                 </p>
                 <div className="flex flex-wrap gap-2">
