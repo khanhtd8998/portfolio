@@ -5,6 +5,8 @@ import Introduction from "./components/Introduction";
 import Project from "./components/Project";
 import Section from "./components/Section";
 import Skill from "./components/Skill";
+import Skills from "./components/Skills";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <HeaderV2 />
           <section id="home">
             <Introduction />
+            <AnimatedThemeToggler className="absolute top-4 right-4 z-10" />
           </section>
 
           <section id="about">
@@ -33,6 +36,10 @@ function App() {
 
           <section id="project">
             <Project />
+          </section>
+
+          <section id="skill">
+            <Skills />
           </section>
 
           <section id="skill">

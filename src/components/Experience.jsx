@@ -102,7 +102,7 @@ export default function Experience() {
                   ))}
                 </ul>
                 <p className="text-sm font-medium text-gray-700 mb-2">
-                  Technologies used:
+                  {activeTab === "work" ? "Technologies used:" : "Time"}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {exp.tech.map((tech) => (
@@ -146,9 +146,9 @@ const experienceData = {
   ],
   education: [
     {
-      title: "University of Transport, Ho Chi Minh City",
+      title: " FPT COLLEGES - HN",
       description: ["Majoring in Information Technology."],
-      tech: ["2023 - Present"],
+      tech: ["09/2022 - 01/2025"],
     },
   ],
 };

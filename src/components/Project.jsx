@@ -11,14 +11,41 @@ export default function Project() {
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.4, ease: "linear" }}
     >
-      {/* Header */}
-      <motion.div variants={item} className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-text-title">
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: [0.25, 0.1, 0.25, 1], // cubic-bezier mượt
+        }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <motion.h2
+          initial={{ scale: 0.95 }}
+          whileInView={{ scale: 1 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+            ease: "easeOut",
+          }}
+          className="text-3xl md:text-4xl lg:text-6xl font-bold text-text-title"
+        >
           My Projects
-        </h2>
-        <p className="text-gray-600 mt-2 text-md">
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="text-gray-600 mt-3 text-md"
+        >
           Some of my highlighted works and experiments
-        </p>
+        </motion.p>
       </motion.div>
 
       {/* Projects grid */}
@@ -102,7 +129,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/offering.PNG",
+    image: "/img_project/offering.PNG",
   },
   {
     title: "Redkite Launchpad",
@@ -112,7 +139,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/redkite.PNG",
+    image: "/img_project/redkite.PNG",
   },
   {
     title: "Bike Rental Booking Website",
@@ -121,7 +148,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/bestbike.PNG",
+    image: "/img_project/bestbike.PNG",
   },
   {
     title: "Pet Care Appointment Booking Website",
@@ -131,7 +158,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/miapet.PNG",
+    image: "/img_project/miapet.PNG",
   },
   {
     title: "Omikuji Webapp",
@@ -149,7 +176,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/omikuji.PNG",
+    image: "/img_project/omikuji.PNG",
   },
   {
     title: "Building services with Nodejs",

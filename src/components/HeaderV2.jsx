@@ -17,7 +17,7 @@ const navItems = [
   { id: "experience", name: "Experience", icon: <Briefcase size={18} /> },
   { id: "project", name: "Project", icon: <Folder size={18} /> },
   { id: "skill", name: "Skill", icon: <Code size={18} /> },
-  //   { id: "contact", name: "Contact", icon: <Mail size={18} /> },
+  // { id: "contact", name: "Contact", icon: <Mail size={18} /> },
 ];
 
 export default function HeaderV2() {
