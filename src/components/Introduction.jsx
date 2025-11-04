@@ -42,7 +42,8 @@ export default function Introduction() {
 
   return (
     <motion.section
-      className="min-h-[90vh] max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-evenly gap-6 my-2 md:my-10"
+      id="home"
+      className="min-h-[80vh] max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-evenly gap-6 my-2 md:my-10"
       variants={container}
       initial="hidden"
       whileInView="show"

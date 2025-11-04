@@ -31,8 +31,8 @@ const skills = [
 const Skills = () => {
   return (
     <motion.section
-      id="projects"
-      className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-16"
+      id="skill"
+      className="min-h-[70vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-16"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.1 }}

@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 export default function Project() {
   return (
     <motion.section
-      id="projects"
-      className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 overflow-hidden"
+      id="project"
+      className="min-h-[100vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 overflow-hidden"
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -85,7 +85,9 @@ export default function Project() {
               <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
                 {proj.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">{proj.description}</p>
+              <p className="text-gray-600 dark:text-gray-200 text-sm mb-4">
+                {proj.description}
+              </p>
 
               <div>
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">

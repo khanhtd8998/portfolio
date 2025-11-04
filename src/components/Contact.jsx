@@ -14,7 +14,7 @@ import {
 const Contact = () => {
   return (
     <motion.section
-      id="projects"
+      id="contact"
       className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 md:py-16"
       initial="hidden"
       whileInView="show"
@@ -100,7 +100,7 @@ const Contact = () => {
             <Input placeholder="Email Address *" type="email" required />
             <Textarea placeholder="Your message..." rows={4} required />
 
-            <motion.button
+            <motion.div
               whileHover={{
                 scale: 1.01,
                 boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
@@ -114,7 +114,7 @@ const Contact = () => {
               >
                 Send Message
               </Button>
-            </motion.button>
+            </motion.div>
           </form>
         </div>
       </motion.div>

@@ -41,6 +41,26 @@ export default function HeaderV2() {
   };
 
   // 🔹 Detect section đang hiển thị
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           setActiveId(entry.target.id);
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.6 } // nên để 0.4 hoặc 0.5 thay vì 1
+  //   );
+
+  //   navItems.forEach((item) => {
+  //     const el = document.getElementById(item.id);
+  //     if (el) observer.observe(el);
+  //   });
+
+  //   return () => observer.disconnect();
+  // }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,39 +70,40 @@ export default function HeaderV2() {
           }
         });
       },
-      { threshold: 0.4 } // nên để 0.4 hoặc 0.5 thay vì 1
+      {
+        root: null,
+        threshold: window.innerWidth < 1024 ? 0.2 : 0.4,
+        rootMargin: "-150px 0px -150px 0px", // ⚡ kích hoạt sớm hơn 100px khi gần top
+      }
     );
 
-    navItems.forEach((item) => {
-      const el = document.getElementById(item.id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, [open]);
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((sec) => observer.observe(sec));
+    return () => sections.forEach((sec) => observer.unobserve(sec));
+  }, []);
 
   return (
-    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-auto max-w-4xl px-4">
+    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-auto px-4">
       {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center justify-evenly gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-6 py-2">
+      <nav className="hidden md:flex items-center justify-evenly gap-1.5 lg:gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-4 lg:px-6 py-2">
         {navItems.map((item) => {
           const isActive = item.id === activeId;
           return (
             <button
               key={item.id}
               onClick={() => handleScrollTo(item.id)}
-              className="relative flex items-center gap-2 rounded-full px-4 py-2 text-sm md:text-md font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              className="relative flex items-center gap-2 rounded-full px-3 lg:px-4 py-2 text-sm md:text-md font-medium text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
             >
               {isActive && (
                 <motion.div
                   layoutId="active-pill"
                   className="absolute inset-0 rounded-full bg-gradient-primary"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  transition={{ type: "spring", stiffness: 800, damping: 30 }}
                 />
               )}
               <span
-                className={`flex items-center gap-2 relative z-10 ${
-                  isActive ? "text-white" : ""
+                className={`flex items-center gap-1 lg:gap-2 relative z-10 ${
+                  isActive ? "text-white text-sm lg:text-md" : ""
                 }`}
               >
                 {item.icon}
