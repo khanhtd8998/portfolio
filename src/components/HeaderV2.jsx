@@ -17,7 +17,7 @@ const navItems = [
   { id: "experience", name: "Experience", icon: <Briefcase size={18} /> },
   { id: "project", name: "Project", icon: <Folder size={18} /> },
   { id: "skill", name: "Skill", icon: <Code size={18} /> },
-  // { id: "contact", name: "Contact", icon: <Mail size={18} /> },
+  { id: "contact", name: "Contact", icon: <Mail size={18} /> },
 ];
 
 export default function HeaderV2() {
@@ -99,7 +99,11 @@ export default function HeaderV2() {
           onClick={() => setOpen(!open)}
           className="bg-white/90 dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] p-2 rounded-full"
         >
-          {open ? <X className="dark:text-white" size={22} /> : <Menu className="dark:text-white" size={22} />}
+          {open ? (
+            <X className="dark:text-white" size={22} />
+          ) : (
+            <Menu className="dark:text-white" size={22} />
+          )}
         </button>
       </div>
 

@@ -1,13 +1,48 @@
+import { ArrowUp } from "lucide-react";
 import AboutMeV2 from "./components/AboutMeV2";
 import Experience from "./components/Experience";
 import HeaderV2 from "./components/HeaderV2";
 import Introduction from "./components/Introduction";
 import Project from "./components/Project";
-import Skill from "./components/Skill";
 import Skills from "./components/Skills";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import Contact from "./components/Contact";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const experienceRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowScrollTop(true);
+        } else {
+          const rect = entry.boundingClientRect;
+          if (rect.top > 0) {
+            setShowScrollTop(false);
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (experienceRef.current) observer.observe(experienceRef.current);
+
+    return () => {
+      if (experienceRef.current) observer.unobserve(experienceRef.current);
+    };
+  }, []);
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       <div className="min-h-screen w-full bg-white dark:bg-black relative overflow-x-hidden">
@@ -22,7 +57,7 @@ function App() {
           <HeaderV2 />
           <section id="home">
             <Introduction />
-            <div className="size-10 fixed top-20 md:top-10.5 right-4 z-10 bg-white/95 dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center">
+            <div className="size-10 fixed top-20 md:top-10.5 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center">
               <AnimatedThemeToggler />
             </div>
           </section>
@@ -31,7 +66,7 @@ function App() {
             <AboutMeV2 />
           </section>
 
-          <section id="experience">
+          <section id="experience" ref={experienceRef}>
             <Experience />
           </section>
 
@@ -43,10 +78,25 @@ function App() {
             <Skills />
           </section>
 
-          {/* <section id="skill">
-            <Skill />
-          </section> */}
+          <section id="contact">
+            <Contact />
+          </section>
         </div>
+        <AnimatePresence>
+          {showScrollTop && (
+            <motion.button
+              key="scrollTopButton"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="size-10 fixed bottom-8 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center"
+              onClick={handleScrollToTop}
+            >
+              <ArrowUp />
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );

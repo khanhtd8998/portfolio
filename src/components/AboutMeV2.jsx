@@ -80,10 +80,8 @@ const AboutMeV2 = () => {
             About Me
           </h2>
           <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
-            I'm a freshman majoring in Information Technology at the University
-            of Transport in Ho Chi Minh City. I have a passion for building
-            innovative and impactful applications, and my goal is to become a
-            skilled full-stack software engineer.
+            I have a passion for building innovative and impactful applications,
+            and my goal is to become a skilled full-stack software engineer.
           </p>
         </div>
 
@@ -133,7 +131,7 @@ const AboutMeV2 = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Dowload My CV <Download size={16} />
+              View My CV <Download size={16} />
             </a>
           </motion.button>
 

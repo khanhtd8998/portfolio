@@ -129,7 +129,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/offering.PNG",
+    image: "./img_project/offering.png",
   },
   {
     title: "Redkite Launchpad",
@@ -139,7 +139,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/redkite.PNG",
+    image: "./img_project/redkite.png",
   },
   {
     title: "Bike Rental Booking Website",
@@ -148,7 +148,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/bestbike.PNG",
+    image: "./img_project/bestbike.jpg",
   },
   {
     title: "Pet Care Appointment Booking Website",
@@ -158,7 +158,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/miapet.PNG",
+    image: "./img_project/miapet.png",
   },
   {
     title: "Omikuji Webapp",
@@ -176,7 +176,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/omikuji.PNG",
+    image: "./img_project/omikuji.png",
   },
   {
     title: "Building services with Nodejs",
