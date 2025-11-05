@@ -8,7 +8,6 @@ export default function Experience() {
 
   return (
     <section
-      id="experience"
       className="min-h-[50vh] max-w-7xl mx-auto flex flex-col items-center justify-start py-10 md:py-16 overflow-hidden"
     >
       {/* Title */}

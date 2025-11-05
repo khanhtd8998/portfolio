@@ -19,6 +19,14 @@ export default function Introduction() {
     }
   };
 
+  const handleScrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY - 50;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   // Tạo hiệu ứng gõ chữ
   useEffect(() => {
     if (index === roles.length) return;
@@ -42,7 +50,6 @@ export default function Introduction() {
 
   return (
     <motion.section
-      id="home"
       className="min-h-[80vh] max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-evenly gap-6 my-2 md:my-10"
       variants={container}
       initial="hidden"
@@ -108,6 +115,7 @@ export default function Introduction() {
             }}
             whileTap={{ scale: 0.98 }}
             className="dark:text-black flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-white border border-gray-300 dark:border-gray-600 dark:shadow-[0_0_15px_rgba(255,255,255,0.15)] px-5 py-2 rounded-full transition-all"
+            onClick={handleScrollToContact}
           >
             Contact Me <ArrowRight size={16} />
           </motion.button>

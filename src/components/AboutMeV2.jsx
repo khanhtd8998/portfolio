@@ -12,6 +12,14 @@ import {
 } from "lucide-react";
 
 const AboutMeV2 = () => {
+  const handleScrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY - 50;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const infoList = [
     { icon: <User className="w-4 h-4" />, label: "Name", value: "Khanh Tran" },
     {
@@ -43,7 +51,6 @@ const AboutMeV2 = () => {
 
   return (
     <motion.section
-      id="about"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -142,6 +149,7 @@ const AboutMeV2 = () => {
             }}
             whileTap={{ scale: 0.98 }}
             className="dark:text-black flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-white border border-gray-300 px-5 py-2 rounded-lg shadow-sm transition-all"
+            onClick={handleScrollToContact}
           >
             Contact Me <Contact size={16} />
           </motion.button>

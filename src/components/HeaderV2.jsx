@@ -136,7 +136,7 @@ export default function HeaderV2() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-12 w-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 bg-white/95 dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] rounded-2xl p-4 md:hidden"
+            className="absolute top-10 w-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 bg-transparent rounded-2xl dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] p-4 md:hidden"
           >
             {navItems.map((item) => {
               const isActive = item.id === activeId;

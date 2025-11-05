@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 export default function Project() {
   return (
     <motion.section
-      id="project"
       className="min-h-[100vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 overflow-hidden"
       variants={container}
       initial="hidden"
@@ -143,53 +142,53 @@ const projects = [
     featured: false,
     image: "./img_project/redkite.png",
   },
-  {
-    title: "Bike Rental Booking Website",
-    description: "Car Rental Management System",
-    technologies: ["React", "TailwindCSS", "ShadcnUi", "MobX"],
-    live: "#",
-    github: "#",
-    featured: false,
-    image: "./img_project/bestbike.jpg",
-  },
-  {
-    title: "Pet Care Appointment Booking Website",
-    description:
-      "A web application designed for users to easily book pet care services.",
-    technologies: ["React", "TailwindCSS", "ShadcnUi", "MobX"],
-    live: "#",
-    github: "#",
-    featured: false,
-    image: "./img_project/miapet.png",
-  },
-  {
-    title: "Omikuji Webapp",
-    description:
-      "A web application that allow users to add items on a map or visit specific locations and use a mobile device to collect virtual items.",
-    technologies: [
-      "React",
-      "TailwindCSS",
-      "ShadcnUi",
-      "MobX",
-      "Mapbox",
-      "SimpleWebAuthen",
-      "FIDO2",
-    ],
-    live: "#",
-    github: "#",
-    featured: false,
-    image: "./img_project/omikuji.png",
-  },
-  {
-    title: "Building services with Nodejs",
-    description:
-      "Backend APIs for e-commerce features (product, cart, payment, user)",
-    technologies: ["Node.js", "ExpressJS", "MongoDB", "JWT", "Vercel"],
-    live: "#",
-    github: "https://github.com/khanhtd8998/nodejs_project.git",
-    featured: false,
-    image: "https://images.viblo.asia/1a93ce50-73b2-4ab6-a71a-b8a29840214a.png",
-  },
+  // {
+  //   title: "Bike Rental Booking Website",
+  //   description: "Car Rental Management System",
+  //   technologies: ["React", "TailwindCSS", "ShadcnUi", "MobX"],
+  //   live: "#",
+  //   github: "#",
+  //   featured: false,
+  //   image: "./img_project/bestbike.jpg",
+  // },
+  // {
+  //   title: "Pet Care Appointment Booking Website",
+  //   description:
+  //     "A web application designed for users to easily book pet care services.",
+  //   technologies: ["React", "TailwindCSS", "ShadcnUi", "MobX"],
+  //   live: "#",
+  //   github: "#",
+  //   featured: false,
+  //   image: "./img_project/miapet.png",
+  // },
+  // {
+  //   title: "Omikuji Webapp",
+  //   description:
+  //     "A web application that allow users to add items on a map or visit specific locations and use a mobile device to collect virtual items.",
+  //   technologies: [
+  //     "React",
+  //     "TailwindCSS",
+  //     "ShadcnUi",
+  //     "MobX",
+  //     "Mapbox",
+  //     "SimpleWebAuthen",
+  //     "FIDO2",
+  //   ],
+  //   live: "#",
+  //   github: "#",
+  //   featured: false,
+  //   image: "./img_project/omikuji.png",
+  // },
+  // {
+  //   title: "Building services with Nodejs",
+  //   description:
+  //     "Backend APIs for e-commerce features (product, cart, payment, user)",
+  //   technologies: ["Node.js", "ExpressJS", "MongoDB", "JWT", "Vercel"],
+  //   live: "#",
+  //   github: "https://github.com/khanhtd8998/nodejs_project.git",
+  //   featured: false,
+  //   image: "https://images.viblo.asia/1a93ce50-73b2-4ab6-a71a-b8a29840214a.png",
+  // },
 ];
 
 const container = {

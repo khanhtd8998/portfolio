@@ -14,7 +14,6 @@ import {
 const Contact = () => {
   return (
     <motion.section
-      id="contact"
       className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 md:py-16"
       initial="hidden"
       whileInView="show"
