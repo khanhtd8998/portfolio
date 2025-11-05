@@ -2,6 +2,7 @@ import Atropos from "atropos/react";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ConfettiSideCannons } from "./ui/ConfettiSideCannons";
 
 // ====== Hiệu ứng typing text ======
 const roles = ["Frontend Developer", "React Developer", "Full-stack Developer"];
@@ -14,7 +15,7 @@ export default function Introduction() {
   const handleScrollToProjects = () => {
     const section = document.getElementById("project");
     if (section) {
-      const y = section.getBoundingClientRect().top + window.scrollY - 50;
+      const y = section.getBoundingClientRect().top + window.scrollY - 100;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
@@ -105,7 +106,9 @@ export default function Introduction() {
             className="flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-gradient-primary text-white px-5 py-2 rounded-full transition-all"
             onClick={handleScrollToProjects}
           >
-            View Projects <ArrowRight size={16} />
+            <ConfettiSideCannons className="bg-transparent border-0 p-0 m-0 hover:bg-transparent shadow-none text-md h-4">
+              View Projects <ArrowRight size={16} />
+            </ConfettiSideCannons>
           </motion.button>
 
           <motion.button
@@ -119,6 +122,7 @@ export default function Introduction() {
           >
             Contact Me <ArrowRight size={16} />
           </motion.button>
+          <div className="relative"></div>
         </motion.div>
       </motion.div>
 

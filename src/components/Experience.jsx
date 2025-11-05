@@ -7,9 +7,7 @@ export default function Experience() {
   const items = experienceData[activeTab];
 
   return (
-    <section
-      className="min-h-[50vh] max-w-7xl mx-auto flex flex-col items-center justify-start py-10 md:py-16 overflow-hidden"
-    >
+    <section className="min-h-[60vh] max-w-7xl mx-auto flex flex-col items-center justify-start py-10 md:py-16 overflow-hidden">
       {/* Title */}
       <motion.div
         className="text-center mb-12"

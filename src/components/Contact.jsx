@@ -95,9 +95,9 @@ const Contact = () => {
         <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-[var(--shadow-glow)]">
           <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
           <form className="flex flex-col gap-4">
-            <Input placeholder="Full Name *" required />
-            <Input placeholder="Email Address *" type="email" required />
-            <Textarea placeholder="Your message..." rows={4} required />
+            <Input placeholder="Full Name *" />
+            <Input placeholder="Email Address *" type="email" />
+            <Textarea placeholder="Your message..." rows={4} />
 
             <motion.div
               whileHover={{
@@ -108,8 +108,8 @@ const Contact = () => {
               className="flex items-center w-full justify-center gap-2 bg-gradient-primary px-5 py-2 rounded-lg transition-all"
             >
               <Button
-                type="submit"
-                className="bg-transparent hover:bg-transparent shadow-none text-center text-white"
+                type="button"
+                className="bg-transparent w-full hover:bg-transparent shadow-none text-center text-white"
               >
                 Send Message
               </Button>

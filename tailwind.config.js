@@ -17,6 +17,7 @@ module.exports = {
         xs: "360px", // Galaxy S8, iPhone SE
         sm: "480px", // iPhone Pro, Pixel
         // Tablet nhỏ
+        point600: "600px",
         md: "768px", // iPad Mini
         // Tablet lớn / Laptop nhỏ
         lg: "1024px",
