@@ -37,7 +37,7 @@ function App() {
     return () => {
       if (experienceRef.current) observer.unobserve(experienceRef.current);
     };
-  }, []);
+  }, [isIntroDone]);
 
   const handleScrollToTop = () => {
     window.scrollTo({

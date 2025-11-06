@@ -135,7 +135,7 @@ export default function Introduction() {
         className="flex-1 flex items-center justify-center p-0 md:p-6 lg:p-12"
       >
         <Atropos
-          className="atropos-avatar w-[80%] h-[80%]"
+          className="atropos-avatar w-[70%] h-[70%] md:w-[90%] md:h-[90%] lg:w-[100%] lg:h-[100%] animate-fade-in-up"
           activeOffset={40}
           shadowScale={1.05}
           highlight={false}
@@ -144,7 +144,7 @@ export default function Introduction() {
             <img
               src="./avatar_ai.jpg"
               alt="Profile"
-              className="w-full h-full object-cover rounded-full shadow-xl"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
         </Atropos>
