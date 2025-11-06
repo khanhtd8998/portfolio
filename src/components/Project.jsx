@@ -101,7 +101,7 @@ export default function Project() {
                   <img
                     src={proj.image}
                     alt={proj.title}
-                    className="w-14 h-14 object-fill rounded-md border border-gray-300 dark:border-gray-700"
+                    className="w-14 h-14 bg-white object-fill rounded-md border border-gray-300 dark:border-b-gray-500"
                   />
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
