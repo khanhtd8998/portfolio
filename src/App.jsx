@@ -105,10 +105,6 @@ function App() {
               <section id="contact">
                 <Contact />
               </section>
-
-              <section id="terminal">
-                <TerminalBackground />
-              </section>
             </div>
             <AnimatePresence>
               {showScrollTop && (
