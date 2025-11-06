@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 const skills = [
   { name: "React", slug: "react", isCdn: true },
-  { name: "HTML", slug: "/img_techstack/html.png", isCdn: false },
-  { name: "CSS", slug: "/img_techstack/css.png", isCdn: false },
-  { name: "JavaScript", slug: "/img_techstack/js.png", isCdn: false },
+  { name: "HTML", slug: "./img_techstack/html.png", isCdn: false },
+  { name: "CSS", slug: "./img_techstack/css.png", isCdn: false },
+  { name: "JavaScript", slug: "./img_techstack/js.png", isCdn: false },
   { name: "Node.js", slug: "nodedotjs", isCdn: true },
   { name: "TypeScript", slug: "typescript", isCdn: true },
   { name: "Next.js", slug: "nextdotjs", isCdn: true },
@@ -24,8 +24,8 @@ const skills = [
   { name: "Mui", slug: "mui", isCdn: true },
   { name: "Ant Design", slug: "antdesign", isCdn: true },
 
-  { name: "Vite", slug: "/img_techstack/vite.png", isCdn: false },
-  { name: "VS Code", slug: "/img_techstack/vsc.png", isCdn: false },
+  { name: "Vite", slug: "./img_techstack/vite.png", isCdn: false },
+  { name: "VS Code", slug: "./img_techstack/vsc.png", isCdn: false },
 ];
 
 const Skills = () => {
