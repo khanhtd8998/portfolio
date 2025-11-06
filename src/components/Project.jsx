@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 export default function Project() {
-
   return (
     <motion.section
       className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 overflow-hidden"
@@ -201,7 +200,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/bestbike.jpg",
+    image: "./img_project/bestbike.PNG",
     responsibilities: [
       "Build UI for viewing bikes, locations, and current position on the map.",
       "Build UI with Shadcn UI and Tailwind CSS",
@@ -240,7 +239,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/omikuji.PNG",
+    image: "./img_project/omikuji.png",
     responsibilities: [
       "Develop a CMS system to manage users and items mark on the map.",
       "Implement Web2Authen and FIDO for secure login.",

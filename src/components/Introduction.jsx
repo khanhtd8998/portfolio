@@ -142,7 +142,7 @@ export default function Introduction() {
         >
           <div className="p-1.5 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 inline-block">
             <img
-              src="./avatar.jpg"
+              src="./avatar_ai.jpg"
               alt="Profile"
               className="w-full h-full object-cover rounded-full shadow-xl"
             />
