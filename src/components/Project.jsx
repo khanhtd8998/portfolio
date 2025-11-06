@@ -239,7 +239,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "./img_project/omikuji.png",
+    image: "./img_project/omikuji.PNG",
     responsibilities: [
       "Develop a CMS system to manage users and items mark on the map.",
       "Implement Web2Authen and FIDO for secure login.",
