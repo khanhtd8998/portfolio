@@ -170,7 +170,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/offering.png",
+    image: "./img_project/offering.png",
     responsibilities: [
       "Build website UI using Next.js and MUI.",
       "Add dark-mode feature.",
@@ -186,7 +186,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/redkite.png",
+    image: "./img_project/redkite.png",
     responsibilities: [
       "Change and update the website UI.",
       "Redesign layouts and improve page structure.",
@@ -201,7 +201,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/bestbike.jpg",
+    image: "./img_project/bestbike.jpg",
     responsibilities: [
       "Build UI for viewing bikes, locations, and current position on the map.",
       "Build UI with Shadcn UI and Tailwind CSS",
@@ -217,7 +217,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/miapet.png",
+    image: "./img_project/miapet.png",
     responsibilities: [
       "Develop the user information page, pet care store page, and store review page.",
       "Manage user and pet information within the CMS.",
@@ -240,7 +240,7 @@ const projects = [
     live: "#",
     github: "#",
     featured: false,
-    image: "/img_project/omikuji.png",
+    image: "./img_project/omikuji.png",
     responsibilities: [
       "Develop a CMS system to manage users and items mark on the map.",
       "Implement Web2Authen and FIDO for secure login.",
