@@ -9,9 +9,11 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import Contact from "./components/Contact";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import TerminalBackground from "./components/TerminalBackground";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isIntroDone, setIsIntroDone] = useState(false);
 
   const experienceRef = useRef(null);
 
@@ -36,6 +38,7 @@ function App() {
       if (experienceRef.current) observer.unobserve(experienceRef.current);
     };
   }, []);
+
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -43,6 +46,11 @@ function App() {
       behavior: "smooth",
     });
   };
+
+  const handleIntroEnd = () => {
+    setIsIntroDone(true);
+  };
+
   return (
     <>
       <div className="min-h-screen w-full bg-white dark:bg-black relative overflow-x-hidden">
@@ -53,50 +61,72 @@ function App() {
     dark:bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#1f2937_2px,#1f2937_4px)]
   "
         />
-        <div className="relative z-10 p-6 md:p-10">
-          <HeaderV2 />
-          <section id="home">
-            <Introduction />
-            <div className="size-10 fixed top-20 md:top-10.5 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center">
-              <AnimatedThemeToggler />
-            </div>
-          </section>
-
-          <section id="about">
-            <AboutMeV2 />
-          </section>
-
-          <section id="experience" ref={experienceRef}>
-            <Experience />
-          </section>
-
-          <section id="project">
-            <Project />
-          </section>
-
-          <section id="skill">
-            <Skills />
-          </section>
-
-          <section id="contact">
-            <Contact />
-          </section>
-        </div>
         <AnimatePresence>
-          {showScrollTop && (
-            <motion.button
-              key="scrollTopButton"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="size-10 fixed bottom-8 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center"
-              onClick={handleScrollToTop}
+          {!isIntroDone && (
+            <motion.div
+              key="intro"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-transparent"
             >
-              <ArrowUp />
-            </motion.button>
+              {/* TerminalBackground chạy trong đây */}
+              <TerminalBackground onComplete={handleIntroEnd} />
+            </motion.div>
           )}
         </AnimatePresence>
+
+        {isIntroDone && (
+          <>
+            <div className="relative z-10 p-6 md:p-10">
+              <HeaderV2 />
+              <section id="home">
+                <Introduction />
+                <div className="size-10 fixed top-20 md:top-10.5 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center">
+                  <AnimatedThemeToggler />
+                </div>
+              </section>
+
+              <section id="about">
+                <AboutMeV2 />
+              </section>
+
+              <section id="experience" ref={experienceRef}>
+                <Experience />
+              </section>
+
+              <section id="project">
+                <Project />
+              </section>
+
+              <section id="skill">
+                <Skills />
+              </section>
+
+              <section id="contact">
+                <Contact />
+              </section>
+
+              <section id="terminal">
+                <TerminalBackground />
+              </section>
+            </div>
+            <AnimatePresence>
+              {showScrollTop && (
+                <motion.button
+                  key="scrollTopButton"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="size-10 fixed bottom-8 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full flex items-center justify-center"
+                  onClick={handleScrollToTop}
+                >
+                  <ArrowUp />
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </>
+        )}
       </div>
     </>
   );

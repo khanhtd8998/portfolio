@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { ConfettiSideCannons } from "./ui/ConfettiSideCannons";
 
 // ====== Hiệu ứng typing text ======
-const roles = ["Frontend Developer", "React Developer", "Full-stack Developer"];
+const roles = ["I'm a Frontend Developer", "I like playing video games", "And I love coding"];
 
 export default function Introduction() {
   const [index, setIndex] = useState(0);
@@ -97,7 +97,7 @@ export default function Introduction() {
         </motion.div>
 
         <motion.div variants={item} className="flex flex-wrap gap-4">
-          <motion.button
+          <motion.div
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
@@ -109,7 +109,7 @@ export default function Introduction() {
             <ConfettiSideCannons className="bg-transparent border-0 p-0 m-0 hover:bg-transparent shadow-none text-md h-4">
               View Projects <ArrowRight size={16} />
             </ConfettiSideCannons>
-          </motion.button>
+          </motion.div>
 
           <motion.button
             whileHover={{
