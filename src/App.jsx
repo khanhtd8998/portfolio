@@ -67,7 +67,13 @@ function App() {
               key="intro"
               initial={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-transparent"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-amber-950/95 dark:bg-black/95 bg-center bg-no-repeat"
+              style={{
+                backgroundImage:
+                  // "url('https://static1.squarespace.com/static/5e949a92e17d55230cd1d44f/t/65ca8953891a0f30a15497f0/1707772248183/BSonoma3x2.png?format=1500w')",
+                  "url('https://4kwallpapers.com/images/wallpapers/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-1920x1080-1432.jpg')",
+                backgroundSize: "cover",
+              }}
             >
               {/* TerminalBackground chạy trong đây */}
               <TerminalBackground onComplete={handleIntroEnd} />
