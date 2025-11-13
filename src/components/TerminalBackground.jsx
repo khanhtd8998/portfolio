@@ -16,7 +16,7 @@ const TerminalBackground = ({ onComplete }) => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }} // 👈 chạy lại khi scroll tới
+      viewport={{ once: false, amount: 0.3 }}
     >
       <Terminal className="shadow-[0_10px_25px_rgba(0,0,0,0.1)] mx-4">
         <TypingAnimation duration={20}>
@@ -41,7 +41,7 @@ const TerminalBackground = ({ onComplete }) => {
           Success! Project initialization completed.
         </TypingAnimation>
         <TypingAnimation duration={20} className="text-muted-foreground">
-          You may now add components.
+          Welcome to khanhtd8998's portfolio!
         </TypingAnimation>
       </Terminal>
     </motion.section>
