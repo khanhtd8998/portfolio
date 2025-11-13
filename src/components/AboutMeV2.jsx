@@ -4,11 +4,9 @@ import {
   Briefcase,
   Contact,
   Download,
-  GraduationCap,
   Mail,
   MapPin,
-  Phone,
-  User,
+  User
 } from "lucide-react";
 
 const AboutMeV2 = () => {
@@ -31,16 +29,6 @@ const AboutMeV2 = () => {
       icon: <Mail className="w-4 h-4" />,
       label: "Email",
       value: "trankhanhhy199x@gmail.com",
-    },
-    {
-      icon: <GraduationCap className="w-4 h-4" />,
-      label: "Studying At",
-      value: "FPT POLYTECHNIC COLLEGES",
-    },
-    {
-      icon: <Phone className="w-4 h-4" />,
-      label: "Phone",
-      value: "0984 282 598",
     },
     {
       icon: <Briefcase className="w-4 h-4" />,
