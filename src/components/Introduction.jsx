@@ -3,32 +3,15 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ConfettiSideCannons } from "./ui/ConfettiSideCannons";
+import { useTranslation } from "react-i18next";
 
-// ====== Hiệu ứng typing text ======
-const roles = ["I'm a Frontend Developer", "I like playing video games", "And I love coding"];
-
+const roles = ["introduction_greeting.roles.0", "introduction_greeting.roles.1", "introduction_greeting.roles.2"];
 export default function Introduction() {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
+  const { t } = useTranslation();
 
-  const handleScrollToProjects = () => {
-    const section = document.getElementById("project");
-    if (section) {
-      const y = section.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
-  const handleScrollToContact = () => {
-    const section = document.getElementById("contact");
-    if (section) {
-      const y = section.getBoundingClientRect().top + window.scrollY - 50;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
-  // Tạo hiệu ứng gõ chữ
   useEffect(() => {
     if (index === roles.length) return;
 
@@ -49,50 +32,57 @@ export default function Introduction() {
     return () => clearTimeout(timeout);
   }, [subIndex, index, reverse]);
 
+  const handleScrollToProjects = () => {
+    const section = document.getElementById("project");
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  const handleScrollToContact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY - 50;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <motion.section
       className="min-h-[80vh] max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-evenly gap-6 my-2 md:my-10"
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }} // 👈 chạy lại khi scroll tới
+      viewport={{ once: false, amount: 0.3 }}
     >
       {/* LEFT SIDE */}
       <motion.div variants={container} className="flex-1">
         <motion.h1
           variants={item}
-          className="text-4xl lg:text-6xl font-bold text-title-gradient mb-3"
+          className="text-4xl lg:text-5xl font-bold text-title-gradient mb-3"
         >
-          Hi, I'm <span className="">Khanh</span>
+          {t("introduction_greeting.i_am")}
         </motion.h1>
 
         <motion.h2
           variants={item}
           className="text-xl font-semibold md:text-2xl text-gray-700 dark:text-gray-300 mb-5 h-[30px]"
         >
-          {roles[index].substring(0, subIndex)}|
+          {t(roles[index]).substring(0, subIndex)}|
         </motion.h2>
 
         <motion.p
           variants={item}
           className="text-gray-600 dark:text-gray-200 leading-relaxed text-sm md:text-md mb-6 max-w-xl"
         >
-          {/* Hello! I'm Tran Duy Khanh, a passionate Frontend Developer based in
-          Vietnam. I specialize in creating beautiful and functional web
-          applications using modern technologies like React, Tailwind CSS, and
-          more. With a keen eye for design and a commitment to clean code, I
-          strive to deliver exceptional user experiences. When I'm not coding,
-          you can find me exploring new tech trends or enjoying a good book. */}
-          Hello! I'm Tran Duy Khanh, a Frontend Developer from Vietnam
-          specializing in modern web technologies like React and Tailwind CSS.
-          I’m passionate about crafting clean, user-friendly interfaces and
-          delivering great digital experiences.
+          {t("introduction_greeting.description")}
         </motion.p>
 
         <motion.div variants={item} className="flex items-center gap-2 mb-6">
           <MapPin className="text-red-500" size={18} />
           <span className="text-gray-700 dark:text-gray-300 text-sm md:text-base">
-            Cau Giay, Ha Noi
+            {t("introduction_greeting.location")}
           </span>
         </motion.div>
 
@@ -107,7 +97,7 @@ export default function Introduction() {
             onClick={handleScrollToProjects}
           >
             <ConfettiSideCannons className="bg-transparent border-0 p-0 m-0 hover:bg-transparent shadow-none text-md h-4">
-              View Projects <ArrowRight size={16} />
+              {t("button.view_projects")} <ArrowRight size={16} />
             </ConfettiSideCannons>
           </motion.div>
 
@@ -120,7 +110,7 @@ export default function Introduction() {
             className="dark:text-black flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-white border border-gray-300 dark:border-gray-600 dark:shadow-[0_0_15px_rgba(255,255,255,0.15)] px-5 py-2 rounded-full transition-all"
             onClick={handleScrollToContact}
           >
-            Contact Me <ArrowRight size={16} />
+            {t("button.contact_me")} <ArrowRight size={16} />
           </motion.button>
           <div className="relative"></div>
         </motion.div>

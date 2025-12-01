@@ -9,7 +9,7 @@ import {
   User
 } from "lucide-react";
 
-const AboutMeV2 = () => {
+const AboutMe = () => {
   const handleScrollToContact = () => {
     const section = document.getElementById("contact");
     if (section) {
@@ -147,4 +147,4 @@ const AboutMeV2 = () => {
   );
 };
 
-export default AboutMeV2;
+export default AboutMe;

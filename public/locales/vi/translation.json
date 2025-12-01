@@ -1,0 +1,24 @@
+{
+  "words_title": {
+    "home": "Trang chủ",
+    "about": "Về tôi",
+    "experience": "Kinh nghiệm",
+    "project": "Dự án",
+    "skill": "Kĩ năng",
+    "contact": "Liên hệ"
+  },
+  "introduction_greeting": {
+    "i_am": "Xin chào, tôi là Khánh",
+    "description": "Xin chào! Tôi là Trần Duy Khánh, một lập trình viên Frontend đến từ Việt Nam, chuyên về các công nghệ web hiện đại như React, Next.js và Tailwind CSS. Tôi đam mê thiết kế giao diện gọn gàng, thân thiện với người dùng và mang lại trải nghiệm tuyệt vời.",
+    "location": "Cầu Giấy, Hà Nội, Việt Nam",
+    "roles": [
+      "Tôi là Frontend Developer",
+      "Tôi thích chơi game",
+      "Và tôi rất thích lập trình"
+    ]
+  },
+  "button": {
+    "view_projects": "Xem dự án",
+    "contact_me": "Liên hệ"
+  }
+}

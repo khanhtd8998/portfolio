@@ -1,0 +1,24 @@
+{
+  "words_title": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "project": "Project",
+    "skill": "Skill",
+    "contact": "Contact"
+  },
+  "introduction_greeting": {
+    "i_am": "Hi, I'm Khanh",
+    "description": "Hello! I'm Tran Duy Khanh, a Frontend Developer from Vietnam specializing in modern web technologies like React, Next.js and Tailwind CSS. I’m passionate about crafting clean, user-friendly interfaces and delivering great digital experiences.",
+    "location": "Cau Giay, Ha Noi, Vietnam",
+    "roles": [
+      "I'm a Frontend Developer",
+      "I like playing video games",
+      "And I love coding"
+    ]
+  },
+  "button": {
+    "view_projects": "View Projects",
+    "contact_me": "Contact Me"
+  }
+}

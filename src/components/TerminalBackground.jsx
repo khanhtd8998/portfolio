@@ -6,10 +6,11 @@ const TerminalBackground = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
-    }, 4000); // ví dụ chạy 4 giây
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
+
   return (
     <motion.section
       className="min-h-[100vh] w-full mx-auto flex flex-col md:flex-row items-center justify-evenly gap-6 my-2 px-4 md:my-10"
@@ -27,9 +28,13 @@ const TerminalBackground = ({ onComplete }) => {
         </AnimatedSpan>
         <AnimatedSpan className="text-green-500">✔ Updating Home</AnimatedSpan>
         <AnimatedSpan className="text-green-500">✔ Updating About</AnimatedSpan>
-        <AnimatedSpan className="text-green-500">✔ Updating Experience</AnimatedSpan>
+        <AnimatedSpan className="text-green-500">
+          ✔ Updating Experience
+        </AnimatedSpan>
         <AnimatedSpan className="text-green-500">✔ Updating Skill</AnimatedSpan>
-        <AnimatedSpan className="text-green-500">✔ Updating Contact</AnimatedSpan>
+        <AnimatedSpan className="text-green-500">
+          ✔ Updating Contact
+        </AnimatedSpan>
         <AnimatedSpan className="text-green-500">
           ✔ Installing dependencies.
         </AnimatedSpan>
