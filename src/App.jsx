@@ -64,12 +64,6 @@ function App() {
               <Header />
               <section id="home">
                 <Introduction />
-                <div className="size-10 hidden md:flex items-center justify-center fixed top-20 md:top-10.5 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
-                  <AnimatedThemeToggler />
-                </div>
-                <div className="size-10 hidden md:flex items-center justify-center fixed top-32 md:top-22.5 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
-                  <SelectLanguage />
-                </div>
               </section>
 
               <section id="about">
@@ -95,6 +89,12 @@ function App() {
             <AnimatePresence>
               {showScrollTop && <ScrollToTop />}
             </AnimatePresence>
+            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-8 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
+              <AnimatedThemeToggler />
+            </div>
+            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-20 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
+              <SelectLanguage />
+            </div>
           </>
         )}
       </div>

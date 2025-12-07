@@ -66,9 +66,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-[85%] lg:w-auto px-4">
+    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-[85%] lg:w-[80%] xl:w-[65%] 2xl:w-[60%] 3xl:w-auto px-4">
       {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center justify-evenly gap-1 lg:gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-4 lg:px-6 py-2">
+      <nav className="hidden md:flex items-center justify-evenly gap-1 lg:gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-2 py-2">
         {navItems.map((item) => {
           const isActive = item.id === activeId;
           return (
