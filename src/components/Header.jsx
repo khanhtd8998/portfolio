@@ -11,6 +11,8 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import { SelectLanguage } from "./ui/component/SelectLanguage";
 
 const navItems = [
   { id: "home", name: "Home", icon: <Home size={18} /> },
@@ -38,30 +40,9 @@ export default function Header() {
       });
     }
     if (window.innerWidth < 768) {
-      setOpen(false); // 🔹 Chỉ đóng menu ở mobile
+      setOpen(false);
     }
   };
-
-  // 🔹 Detect section đang hiển thị
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           setActiveId(entry.target.id);
-  //         }
-  //       });
-  //     },
-  //     { threshold: 0.6 } // nên để 0.4 hoặc 0.5 thay vì 1
-  //   );
-
-  //   navItems.forEach((item) => {
-  //     const el = document.getElementById(item.id);
-  //     if (el) observer.observe(el);
-  //   });
-
-  //   return () => observer.disconnect();
-  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,9 +66,9 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-auto px-4">
+    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-[85%] lg:w-auto px-4">
       {/* Desktop Nav */}
-      <nav className="hidden md:flex items-center justify-evenly gap-1.5 lg:gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-4 lg:px-6 py-2">
+      <nav className="hidden md:flex items-center justify-evenly gap-1 lg:gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-4 lg:px-6 py-2">
         {navItems.map((item) => {
           const isActive = item.id === activeId;
           return (
@@ -109,7 +90,9 @@ export default function Header() {
                 }`}
               >
                 {item.icon}
-                <span className="hidden sm:inline">{t(`words_title.${item.id}`)}</span>
+                <span className="hidden sm:inline">
+                  {t(`words_title.${item.id}`)}
+                </span>
               </span>
             </button>
           );
@@ -157,6 +140,10 @@ export default function Header() {
                 </button>
               );
             })}
+            <div className="flex space-x-3">
+              <AnimatedThemeToggler />
+              {/* <SelectLanguage /> */}
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>
