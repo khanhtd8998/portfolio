@@ -2,6 +2,7 @@ import React from "react";
 import Atropos from "atropos/react";
 import "atropos/css";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const skills = [
   { name: "React", slug: "react", isCdn: true },
@@ -29,6 +30,8 @@ const skills = [
 ];
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.section
       className="min-h-[70vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-16"
@@ -56,9 +59,9 @@ const Skills = () => {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-title-gradient"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-gradient"
         >
-          My Tech Stack
+          {t("skills.title")}
         </motion.h2>
 
         <motion.p
@@ -71,8 +74,7 @@ const Skills = () => {
           }}
           className="text-gray-600 dark:text-gray-200 mt-3 text-md"
         >
-          Technologies I use to craft beautiful, efficient, and scalable web
-          apps.
+          {t("skills.description")}
         </motion.p>
       </motion.div>
 

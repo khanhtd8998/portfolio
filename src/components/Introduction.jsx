@@ -20,7 +20,7 @@ export default function Introduction() {
         setSubIndex((prev) => prev + (reverse ? -1 : 1));
         if (!reverse && subIndex === roles[index].length) {
           setReverse(true);
-          setTimeout(() => {}, 1000);
+          setTimeout(() => { }, 1000);
         } else if (reverse && subIndex === 0) {
           setReverse(false);
           setIndex((prev) => (prev + 1) % roles.length);
@@ -60,7 +60,7 @@ export default function Introduction() {
       <motion.div variants={container} className="flex-1">
         <motion.h1
           variants={item}
-          className="text-4xl lg:text-5xl font-bold text-title-gradient mb-3"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-gradient mb-3"
         >
           {t("introduction_greeting.i_am")}
         </motion.h1>

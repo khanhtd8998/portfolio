@@ -1,7 +1,7 @@
 {
   "words_title": {
     "home": "Home",
-    "about": "About",
+    "about": "About me",
     "experience": "Experience",
     "project": "Project",
     "skill": "Skill",
@@ -20,5 +20,226 @@
   "button": {
     "view_projects": "View Projects",
     "contact_me": "Contact Me"
+  },
+  "about_me": {
+    "title": "About Me",
+    "description": "I have a passion for building innovative and impactful applications, and my goal is to become a skilled full-stack software engineer.",
+    "info": {
+      "name": "Name",
+      "location": "Location",
+      "email": "Email",
+      "profession": "Profession",
+      "profession_value": "Developer",
+      "location_value": "Cau Giay, Ha Noi"
+    },
+    "button": {
+      "view_cv": "View My CV"
+    }
+  },
+  "experience": {
+    "title": "Work Experience",
+    "description": "Explore the practical experiences I have accumulated",
+    "tabs": {
+      "work": "Work Experience",
+      "education": "Education"
+    },
+    "card": {
+      "technologies_used": "Technologies used:",
+      "time": "Time"
+    },
+    "work_data": [
+      {
+        "title": "CMC Global",
+        "role": "Frontend Developer",
+        "description": [
+          "Built React 18/19 frontends and a shared internal Design System for ETL & OTC Crypto platforms",
+          "Developed advanced modules: AntV X6 flow designer, CodeMirror SQL editor, and WebSocket/GraphQL dashboards",
+          "Structured codebase with Zustand, React Query, and tsyringe (Dependency Injection) for high performance and clean architecture"
+        ],
+        "tech": [
+          "12/2025 - 05/2026"
+        ]
+      },
+      {
+        "title": "ICETEA LABS CAREERS",
+        "role": "React Developer",
+        "description": [
+          "Built UI with Next.js 15, MUI & Tailwind, implemented dark mode",
+          "Integrated APIs and debugged endpoints with Postman, reducing communication errors by ~30%",
+          "Collaborated with designers and backend team to refine UX and improve data flow"
+        ],
+        "tech": [
+          "04/2025 - 08/2025"
+        ]
+      },
+      {
+        "title": "HELIGATE JOINT STOCK COMPANY",
+        "role": "Intern Frontend Developer",
+        "description": [
+          "Developed UI with React & Shadcn UI, optimized UX for internal modules",
+          "Connected APIs & debugged Postman requests, reducing API issues by ~30%",
+          "Participated in code reviews to improve team code quality using ESLint and Prettier",
+          "Ensured responsive layouts and improved rendering performance."
+        ],
+        "tech": [
+          "09/2024 - 04/2025"
+        ]
+      }
+    ],
+    "education_data": [
+      {
+        "title": "FPT COLLEGES - HN",
+        "description": [
+          "Majoring in Information Technology."
+        ],
+        "tech": [
+          "09/2022 - 01/2025"
+        ]
+      }
+    ]
+  },
+  "project": {
+    "title": "My Projects",
+    "description": "Some of my highlighted works and experiments",
+    "featured": "Featured",
+    "technologies": "Technologies",
+    "list": [
+      {
+        "title": "Offering",
+        "description": "A blockchain-based platform that connects investors and syndicates, enabling seamless fundraising and allocation trading.",
+        "technologies": [
+          "Next.js",
+          "TailwindCSS",
+          "Headless UI",
+          "Zustand"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/offering.PNG",
+        "responsibilities": [
+          "Build website UI using Next.js and MUI.",
+          "Add dark-mode feature.",
+          "Connect API data to Home, Detail, Notifications and User pages.",
+          "Manage global state with Zustand, responsive with all devices."
+        ]
+      },
+      {
+        "title": "Redkite Launchpad",
+        "description": "Red Kite Launchpad – a DeFi/Token sale platform for early-stage Web3 projects",
+        "technologies": [
+          "React",
+          "MUI",
+          "Redux"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/redkite.PNG",
+        "responsibilities": [
+          "Change and update the website UI.",
+          "Redesign layouts and improve page structure.",
+          "Ensure responsiveness across all devices.",
+          "Manage global state with Redux."
+        ]
+      },
+      {
+        "title": "Bike Rental Booking Website",
+        "description": "Car Rental Management System",
+        "technologies": [
+          "React",
+          "TailwindCSS",
+          "ShadcnUi",
+          "MobX"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/bestbike.PNG",
+        "responsibilities": [
+          "Build UI for viewing bikes, locations, and current position on the map.",
+          "Build UI with Shadcn UI and Tailwind CSS",
+          "Connect APIs to sync bike and location data.",
+          "Manage state with MobX and responsive with all devices."
+        ]
+      },
+      {
+        "title": "Pet Care Appointment Booking Website",
+        "description": "A web application designed for users to easily book pet care services.",
+        "technologies": [
+          "React",
+          "TailwindCSS",
+          "ShadcnUi",
+          "MobX"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/miapet.PNG",
+        "responsibilities": [
+          "Develop the user information page, pet care store page, and store review page.",
+          "Manage user and pet information within the CMS.",
+          "Use ShadCN UI and Tailwind CSS to build UI, connect APIs for data, and manage state with MobX, responsive with all devices"
+        ]
+      },
+      {
+        "title": "Omikuji Webapp",
+        "description": "A web application that allow users to add items on a map or visit specific locations and use a mobile device to collect virtual items.",
+        "technologies": [
+          "React",
+          "TailwindCSS",
+          "ShadcnUi",
+          "MobX",
+          "Mapbox",
+          "SimpleWebAuthen",
+          "FIDO2"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/omikuji.PNG",
+        "responsibilities": [
+          "Develop a CMS system to manage users and items mark on the map.",
+          "Implement Web2Authen and FIDO for secure login.",
+          "Use ShadCN UI and Tailwind CSS to build UI, connect APIs for data, and manage state with MobX, responsive with all devices"
+        ]
+      },
+      {
+        "title": "Building services with Nodejs",
+        "description": "Backend APIs for e-commerce features (product, cart, payment, user)",
+        "technologies": [
+          "Node.js",
+          "ExpressJS",
+          "MongoDB",
+          "JWT",
+          "Vercel"
+        ],
+        "live": "#",
+        "github": "https://github.com/khanhtd8998/nodejs_project.git",
+        "featured": false,
+        "image": "https://images.viblo.asia/1a93ce50-73b2-4ab6-a71a-b8a29840214a.png",
+        "responsibilities": [
+          "Develop APIs for main e-commerce features like product, cart, payment, and user management.",
+          "Connect to MongoDB to store and get product, order, and user data.",
+          "Use JWT for user auth and role access, and add security to protect user data."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "My Tech Stack",
+    "description": "Technologies I use to craft beautiful, efficient, and scalable web apps."
+  },
+  "contact_section": {
+    "title": "Let's Connect",
+    "description": "Follow me on social media or send me an email. I would love to hear from you!",
+    "socials_title": "Social Networks",
+    "form_title": "Send a Message",
+    "placeholders": {
+      "name": "Full Name *",
+      "email": "Email Address *",
+      "message": "Your message..."
+    },
+    "button": "Send Message"
   }
 }

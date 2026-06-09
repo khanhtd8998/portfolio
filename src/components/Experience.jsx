@@ -1,10 +1,20 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Experience() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState("work");
 
-  const items = experienceData[activeTab];
+  const workData = t("experience.work_data", { returnObjects: true });
+  const educationData = t("experience.education_data", { returnObjects: true });
+
+  const experienceData = {
+    work: Array.isArray(workData) ? workData : [],
+    education: Array.isArray(educationData) ? educationData : [],
+  };
+
+  const items = experienceData[activeTab] || [];
 
   return (
     <section className="min-h-[60vh] max-w-7xl mx-auto flex flex-col items-center justify-start py-10 md:py-16 overflow-hidden">
@@ -27,9 +37,9 @@ export default function Experience() {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-title-gradient"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-gradient"
         >
-          Work Experience
+          {t("experience.title")}
         </motion.h2>
 
         <motion.p
@@ -42,7 +52,7 @@ export default function Experience() {
           }}
           className="text-gray-600 dark:text-gray-200 mt-3 text-md"
         >
-          Explore the practical experiences I have accumulated
+          {t("experience.description")}
         </motion.p>
       </motion.div>
 
@@ -62,20 +72,19 @@ export default function Experience() {
               />
             )}
             <span
-              className={`relative z-10 ${
-                activeTab === tab
-                  ? "text-white"
-                  : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
-              }`}
+              className={`relative z-10 ${activeTab === tab
+                ? "text-white"
+                : "text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                }`}
             >
-              {tab === "work" ? "Work Experience" : "Education"}
+              {tab === "work" ? t("experience.tabs.work") : t("experience.tabs.education")}
             </span>
           </button>
         ))}
       </div>
 
       {/* Cards */}
-      <div className="w-full max-w-5xl">
+      <div className="w-full">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab} // 👈 mỗi tab là 1 layout riêng
@@ -83,35 +92,36 @@ export default function Experience() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="grid md:grid-cols-2 gap-6"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {items.map((exp) => (
               <motion.div
                 key={exp.title}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
-                className="p-6 bg-white/80 dark:bg-gray-900 rounded-lg backdrop-blur-md hover:border hover:border-gradient-primary border border-gray-100 dark:border-gray-800 dark:hover:border-gray-700 shadow-[var(--shadow-glow)] transition-shadow"
+                className="p-6 flex flex-col h-full justify-between bg-white/80 dark:bg-gray-900 rounded-lg backdrop-blur-md hover:border hover:border-gradient-primary border border-gray-100 dark:border-gray-800 dark:hover:border-gray-700 shadow-[var(--shadow-glow)] transition-shadow"
               >
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  {exp.title}
-                </h3>
-                <ul className="text-gray-600 dark:text-gray-200 text-sm mb-3 list-disc pl-4">
-                  {exp.description?.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  {activeTab === "work" ? "Technologies used:" : "Time"}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {exp.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                    {exp.title}
+                  </h3>
+                  <ul className="text-gray-600 dark:text-gray-200 text-sm mb-3 list-disc pl-4">
+                    {exp.description?.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -122,32 +132,3 @@ export default function Experience() {
   );
 }
 
-const experienceData = {
-  work: [
-    {
-      title: " HELIGATE JOINT STOCK COMPANY",
-      role: "Intern Frontend Developer",
-      description: [
-        "Develop website UI using React and Shadcn UI.",
-        "Connect the UI with the API response",
-      ],
-      tech: ["HTML", "CSS", "Javascript", "React", "ShadcnUI", "MobX"],
-    },
-    {
-      title: "ICETEA LABS CAREERS",
-      role: "React Develope",
-      description: [
-        "Develop website using NextJs",
-        "Self-taught and update new technology",
-      ],
-      tech: ["NodeJS", "NextJs", "Zustand", "MUI"],
-    },
-  ],
-  education: [
-    {
-      title: " FPT COLLEGES - HN",
-      description: ["Majoring in Information Technology."],
-      tech: ["09/2022 - 01/2025"],
-    },
-  ],
-};

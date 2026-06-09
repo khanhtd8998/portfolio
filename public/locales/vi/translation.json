@@ -20,5 +20,226 @@
   "button": {
     "view_projects": "Xem dự án",
     "contact_me": "Liên hệ"
+  },
+  "about_me": {
+    "title": "Thông tin cá nhân",
+    "description": "Tôi có niềm đam mê xây dựng các ứng dụng sáng tạo và mang lại nhiều giá trị, và mục tiêu của tôi là trở thành một lập trình viên Full-stack.",
+    "info": {
+      "name": "Tên",
+      "location": "Địa chỉ",
+      "email": "Email",
+      "profession": "Nghề nghiệp",
+      "profession_value": "Lập trình viên",
+      "location_value": "Cầu Giấy, Hà Nội"
+    },
+    "button": {
+      "view_cv": "Xem CV của tôi"
+    }
+  },
+  "experience": {
+    "title": "Kinh nghiệm làm việc",
+    "description": "Những kinh nghiệm thực tế của tôi",
+    "tabs": {
+      "work": "Kinh nghiệm làm việc",
+      "education": "Học vấn"
+    },
+    "card": {
+      "technologies_used": "Công nghệ sử dụng:",
+      "time": "Thời gian"
+    },
+    "work_data": [
+      {
+        "title": "CMC Global",
+        "role": "Frontend Developer",
+        "description": [
+          "Xây dựng frontend bằng React 18/19 và Design System nội bộ dùng chung cho các nền tảng ETL & OTC Crypto",
+          "Phát triển các module nâng cao: thiết kế luồng với AntV X6, trình chỉnh sửa SQL CodeMirror, và dashboard với WebSocket/GraphQL",
+          "Cấu trúc mã nguồn với Zustand, React Query và tsyringe (Dependency Injection) để đạt hiệu suất cao và kiến trúc sạch"
+        ],
+        "tech": [
+          "12/2025 - 05/2026"
+        ]
+      },
+      {
+        "title": "ICETEA LABS CAREERS",
+        "role": "React Developer",
+        "description": [
+          "Xây dựng giao diện với Next.js 15, MUI & Tailwind, tích hợp chế độ tối (dark mode)",
+          "Tích hợp API và gỡ lỗi endpoint với Postman, giảm khoảng 30% lỗi giao tiếp dữ liệu",
+          "Cộng tác với đội ngũ thiết kế và backend để tinh chỉnh UX và cải thiện luồng dữ liệu"
+        ],
+        "tech": [
+          "04/2025 - 08/2025"
+        ]
+      },
+      {
+        "title": "CÔNG TY CỔ PHẦN HELIGATE",
+        "role": "Thực tập sinh Frontend Developer",
+        "description": [
+          "Phát triển giao diện với React & Shadcn UI, tối ưu hóa UX cho các module nội bộ",
+          "Kết nối API & gỡ lỗi các yêu cầu qua Postman, giảm khoảng 30% sự cố về API",
+          "Tham gia đánh giá mã (code review) để cải thiện chất lượng mã nguồn của nhóm bằng ESLint và Prettier",
+          "Đảm bảo bố cục hiển thị tốt trên mọi thiết bị và cải thiện hiệu suất hiển thị"
+        ],
+        "tech": [
+          "09/2024 - 04/2025"
+        ]
+      }
+    ],
+    "education_data": [
+      {
+        "title": " CAO ĐẲNG FPT POLYTECHNIC - HN",
+        "description": [
+          "Chuyên ngành Công nghệ thông tin."
+        ],
+        "tech": [
+          "09/2022 - 01/2025"
+        ]
+      }
+    ]
+  },
+  "project": {
+    "title": "Dự án của tôi",
+    "description": "Một số dự án và sản phẩm nổi bật của tôi",
+    "featured": "Nổi bật",
+    "technologies": "Công nghệ",
+    "list": [
+      {
+        "title": "Offering",
+        "description": "Một nền tảng dựa trên blockchain kết nối các nhà đầu tư và các tổ chức, cho phép gây quỹ và giao dịch phân bổ liền mạch.",
+        "technologies": [
+          "Next.js",
+          "TailwindCSS",
+          "Headless UI",
+          "Zustand"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/offering.PNG",
+        "responsibilities": [
+          "Xây dựng giao diện trang web sử dụng Next.js và MUI.",
+          "Thêm tính năng giao diện tối (dark-mode).",
+          "Kết nối dữ liệu API với các trang Trang chủ, Chi tiết, Thông báo và Người dùng.",
+          "Quản lý state toàn cục bằng Zustand, hiển thị tốt trên mọi thiết bị."
+        ]
+      },
+      {
+        "title": "Redkite Launchpad",
+        "description": "Red Kite Launchpad – nền tảng DeFi/Bán token cho các dự án Web3 giai đoạn đầu",
+        "technologies": [
+          "React",
+          "MUI",
+          "Redux"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/redkite.PNG",
+        "responsibilities": [
+          "Thay đổi và cập nhật giao diện trang web.",
+          "Thiết kế lại bố cục và cải thiện cấu trúc trang.",
+          "Đảm bảo hiển thị tốt trên mọi thiết bị.",
+          "Quản lý state toàn cục bằng Redux."
+        ]
+      },
+      {
+        "title": "Website Thuê Xe",
+        "description": "Hệ thống Quản lý Thuê xe",
+        "technologies": [
+          "React",
+          "TailwindCSS",
+          "ShadcnUi",
+          "MobX"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/bestbike.PNG",
+        "responsibilities": [
+          "Xây dựng giao diện xem xe đạp, địa điểm và vị trí hiện tại trên bản đồ.",
+          "Xây dựng giao diện với Shadcn UI và Tailwind CSS.",
+          "Kết nối API để đồng bộ dữ liệu xe đạp và địa điểm.",
+          "Quản lý state bằng MobX và hiển thị tốt trên mọi thiết bị."
+        ]
+      },
+      {
+        "title": "Website Đặt Lịch Chăm Sóc Thú Cưng",
+        "description": "Một ứng dụng web được thiết kế để người dùng dễ dàng đặt các dịch vụ chăm sóc thú cưng.",
+        "technologies": [
+          "React",
+          "TailwindCSS",
+          "ShadcnUi",
+          "MobX"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/miapet.PNG",
+        "responsibilities": [
+          "Phát triển trang thông tin người dùng, trang cửa hàng chăm sóc thú cưng và đánh giá cửa hàng.",
+          "Quản lý thông tin người dùng và thú cưng trong hệ thống CMS.",
+          "Sử dụng ShadCN UI và Tailwind CSS để xây dựng UI, kết nối API và quản lý state với MobX, hiển thị tốt trên mọi thiết bị."
+        ]
+      },
+      {
+        "title": "Omikuji Webapp",
+        "description": "Ứng dụng web cho phép người dùng thêm vật phẩm trên bản đồ hoặc thăm các địa điểm cụ thể để thu thập vật phẩm ảo.",
+        "technologies": [
+          "React",
+          "TailwindCSS",
+          "ShadcnUi",
+          "MobX",
+          "Mapbox",
+          "SimpleWebAuthen",
+          "FIDO2"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": false,
+        "image": "./img_project/omikuji.PNG",
+        "responsibilities": [
+          "Phát triển hệ thống CMS để quản lý người dùng và đánh dấu vật phẩm trên bản đồ.",
+          "Tích hợp Web2Authen và FIDO để đăng nhập bảo mật.",
+          "Sử dụng ShadCN UI và Tailwind CSS để xây dựng UI, kết nối API và quản lý state với MobX, hiển thị tốt trên mọi thiết bị."
+        ]
+      },
+      {
+        "title": "Xây dựng dịch vụ với Node.js",
+        "description": "Các API Backend cho các tính năng thương mại điện tử (sản phẩm, giỏ hàng, thanh toán, người dùng)",
+        "technologies": [
+          "Node.js",
+          "ExpressJS",
+          "MongoDB",
+          "JWT",
+          "Vercel"
+        ],
+        "live": "#",
+        "github": "https://github.com/khanhtd8998/nodejs_project.git",
+        "featured": false,
+        "image": "https://images.viblo.asia/1a93ce50-73b2-4ab6-a71a-b8a29840214a.png",
+        "responsibilities": [
+          "Phát triển các API cho các tính năng thương mại điện tử chính như sản phẩm, giỏ hàng, thanh toán và quản lý người dùng.",
+          "Kết nối với MongoDB để lưu trữ và lấy dữ liệu sản phẩm, đơn hàng và người dùng.",
+          "Sử dụng JWT để xác thực người dùng, phân quyền và thêm bảo mật để bảo vệ dữ liệu người dùng."
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Công nghệ sử dụng",
+    "description": "Những công nghệ tôi sử dụng để tạo ra các ứng dụng web tối ưu, hiệu quả và có khả năng mở rộng."
+  },
+  "contact_section": {
+    "title": "Liên hệ với tôi",
+    "description": "Theo dõi tôi trên mạng xã hội hoặc gửi email cho tôi. Tôi rất mong nhận được phản hồi từ bạn!",
+    "socials_title": "Mạng xã hội",
+    "form_title": "Gửi tin nhắn",
+    "placeholders": {
+      "name": "Họ và tên *",
+      "email": "Địa chỉ Email *",
+      "message": "Tin nhắn của bạn..."
+    },
+    "button": "Gửi tin nhắn"
   }
 }

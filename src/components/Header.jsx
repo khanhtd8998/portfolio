@@ -9,7 +9,7 @@ import {
   X,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { SelectLanguage } from "./ui/component/SelectLanguage";
@@ -27,6 +27,24 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState("home");
   const { t } = useTranslation();
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [open]);
 
   const handleScrollTo = (id) => {
     const element = document.getElementById(id);
@@ -66,7 +84,10 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-[85%] lg:w-[80%] xl:w-[65%] 2xl:w-[60%] 3xl:w-auto px-4">
+    <header 
+      ref={headerRef}
+      className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full md:w-[85%] lg:w-[80%] xl:w-[65%] 2xl:w-[60%] 3xl:w-auto px-4"
+    >
       {/* Desktop Nav */}
       <nav className="hidden md:flex items-center justify-evenly gap-1 lg:gap-3 rounded-full dark:bg-black shadow-[var(--shadow-glow)] bg-white/80 backdrop-blur-md px-2 py-2">
         {navItems.map((item) => {
@@ -121,7 +142,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-10 w-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 bg-transparent rounded-2xl dark:bg-black backdrop-blur-md shadow-[var(--shadow-glow)] p-4 md:hidden"
+            className="absolute top-10 w-[90%] left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 bg-transparent rounded-2xl dark:bg-black/70 backdrop-blur-md shadow-[var(--shadow-glow)] p-4 md:hidden"
           >
             {navItems.map((item) => {
               const isActive = item.id === activeId;
@@ -136,13 +157,13 @@ export default function Header() {
                   }`}
                 >
                   {item.icon}
-                  {item.name}
+                  {t(`words_title.${item.id}`)}
                 </button>
               );
             })}
             <div className="flex space-x-3">
               <AnimatedThemeToggler />
-              {/* <SelectLanguage /> */}
+              <SelectLanguage />
             </div>
           </motion.nav>
         )}

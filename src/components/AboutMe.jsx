@@ -8,8 +8,10 @@ import {
   MapPin,
   User
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const AboutMe = () => {
+  const { t } = useTranslation();
   const handleScrollToContact = () => {
     const section = document.getElementById("contact");
     if (section) {
@@ -19,21 +21,21 @@ const AboutMe = () => {
   };
 
   const infoList = [
-    { icon: <User className="w-4 h-4" />, label: "Name", value: "Khanh Tran" },
+    { icon: <User className="w-4 h-4" />, label: t("about_me.info.name"), value: "Khanh Tran" },
     {
       icon: <MapPin className="w-4 h-4" />,
-      label: "Location",
-      value: "Cau Giay, Ha Noi",
+      label: t("about_me.info.location"),
+      value: t("about_me.info.location_value"),
     },
     {
       icon: <Mail className="w-4 h-4" />,
-      label: "Email",
+      label: t("about_me.info.email"),
       value: "trankhanhhy199x@gmail.com",
     },
     {
       icon: <Briefcase className="w-4 h-4" />,
-      label: "Profession",
-      value: "Developer",
+      label: t("about_me.info.profession"),
+      value: t("about_me.info.profession_value"),
     },
   ];
 
@@ -71,12 +73,11 @@ const AboutMe = () => {
         className="flex-1 space-y-6 text-center md:text-left"
       >
         <div>
-          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-2 text-title-gradient">
-            About Me
-          </h2>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-title-gradient">
+            {t("about_me.title")}
+          </h3>
           <p className="text-gray-600 dark:text-gray-200 leading-relaxed">
-            I have a passion for building innovative and impactful applications,
-            and my goal is to become a skilled full-stack software engineer.
+            {t("about_me.description")}
           </p>
         </div>
 
@@ -88,7 +89,7 @@ const AboutMe = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              // viewport={{ once: true }}
+            // viewport={{ once: true }}
             >
               <Card className="border border-gray-200 dark:border-gray-700 dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
                 <CardContent className="flex items-center gap-3 py-3">
@@ -96,10 +97,10 @@ const AboutMe = () => {
                     {item.icon}
                   </div>
                   <div className="text-left">
-                    <p className="text-xs text-gray-600 dark:text-gray-200 uppercase">
+                    <p className="text-sm text-gray-600 dark:text-gray-200 uppercase">
                       {item.label}
                     </p>
-                    <p className="font-medium break-all text-balance">
+                    <p className="font-medium break-all text-sm">
                       {item.value}
                     </p>
                   </div>
@@ -120,13 +121,13 @@ const AboutMe = () => {
             className="flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-gradient-primary text-white px-5 py-2 rounded-lg transition-all"
           >
             <a
-              href="https://static.topcv.vn/topcv-cv-uploads/4657afd6d32600be369067cf7f6c34d7.pdf"
+              href="https://s3.topcv.vn/data-cvs/topcv-cv-uploads/b3ab80a05be744e35667aaa727ef5e2e.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=s3-tp-topcv%2F20260609%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T160251Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=5e6d684f25d921ae464bf7420f360f84ca049968bedd16e80a10d88bc6c2b74a"
               download
               className="flex items-center gap-2"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View My CV <Download size={16} />
+              {t("about_me.button.view_cv")} <Download size={16} />
             </a>
           </motion.button>
 
@@ -139,7 +140,7 @@ const AboutMe = () => {
             className="dark:text-black flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-white border border-gray-300 px-5 py-2 rounded-lg shadow-sm transition-all"
             onClick={handleScrollToContact}
           >
-            Contact Me <Contact size={16} />
+            {t("button.contact_me")} <Contact size={16} />
           </motion.button>
         </motion.div>
       </motion.div>

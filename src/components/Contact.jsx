@@ -10,8 +10,11 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.section
       className="min-h-[80vh] max-w-7xl mx-auto flex flex-col items-center justify-center gap-10 py-10 md:py-16"
@@ -39,9 +42,9 @@ const Contact = () => {
             delay: 0.1,
             ease: "easeOut",
           }}
-          className="text-3xl md:text-4xl lg:text-6xl font-bold text-title-gradient"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-title-gradient"
         >
-          Let's Connect
+          {t("contact_section.title")}
         </motion.h2>
 
         <motion.p
@@ -54,8 +57,7 @@ const Contact = () => {
           }}
           className="text-gray-600 dark:text-gray-200 mt-3 text-md"
         >
-          Follow me on social media or send me an email. I would love to hear
-          from you!
+          {t("contact_section.description")}
         </motion.p>
       </motion.div>
 
@@ -68,7 +70,7 @@ const Contact = () => {
       >
         {/* Left: Socials */}
         <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-[var(--shadow-glow)]">
-          <h3 className="text-xl font-semibold mb-6">Social Networks</h3>
+          <h3 className="text-xl font-semibold mb-6">{t("contact_section.socials_title")}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4">
             {socials.map((item, idx) => (
               <motion.a
@@ -93,11 +95,11 @@ const Contact = () => {
 
         {/* Right: Contact form */}
         <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-[var(--shadow-glow)]">
-          <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
+          <h3 className="text-xl font-semibold mb-6">{t("contact_section.form_title")}</h3>
           <form className="flex flex-col gap-4">
-            <Input placeholder="Full Name *" />
-            <Input placeholder="Email Address *" type="email" />
-            <Textarea placeholder="Your message..." rows={4} />
+            <Input placeholder={t("contact_section.placeholders.name")} />
+            <Input placeholder={t("contact_section.placeholders.email")} type="email" />
+            <Textarea placeholder={t("contact_section.placeholders.message")} rows={4} />
 
             <motion.div
               whileHover={{
@@ -111,7 +113,7 @@ const Contact = () => {
                 type="button"
                 className="bg-transparent w-full hover:bg-transparent shadow-none text-center text-white"
               >
-                Send Message
+                {t("contact_section.button")}
               </Button>
             </motion.div>
           </form>
