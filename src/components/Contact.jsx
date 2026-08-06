@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,6 +15,44 @@ import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle, submitting, success, error
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
+
+    try {
+      const form = new FormData();
+      form.append("Name", formData.name);
+      form.append("Email", formData.email);
+      form.append("Message", formData.message);
+
+      // Khi fetch sang Google Apps Script từ frontend, thường sẽ gặp lỗi CORS.
+      // Sử dụng mode: 'no-cors' giúp gửi dữ liệu thành công nhưng không đọc được response trả về.
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: form,
+        mode: "no-cors",
+      });
+
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+
+      // Reset thông báo sau 5 giây
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Error submitting form", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
 
   return (
     <motion.section
@@ -96,10 +135,37 @@ const Contact = () => {
         {/* Right: Contact form */}
         <div className="p-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-[var(--shadow-glow)]">
           <h3 className="text-xl font-semibold mb-6">{t("contact_section.form_title")}</h3>
-          <form className="flex flex-col gap-4">
-            <Input placeholder={t("contact_section.placeholders.name")} />
-            <Input placeholder={t("contact_section.placeholders.email")} type="email" />
-            <Textarea placeholder={t("contact_section.placeholders.message")} rows={4} />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <Input
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder={t("contact_section.placeholders.name")}
+              required
+            />
+            <Input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder={t("contact_section.placeholders.email")}
+              type="email"
+              required
+            />
+            <Textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder={t("contact_section.placeholders.message")}
+              rows={4}
+              required
+            />
+
+            {status === "success" && (
+              <p className="text-green-500 text-sm text-center">Gửi thông tin thành công!</p>
+            )}
+            {status === "error" && (
+              <p className="text-red-500 text-sm text-center">Có lỗi xảy ra, vui lòng thử lại sau.</p>
+            )}
 
             <motion.div
               whileHover={{
@@ -110,10 +176,11 @@ const Contact = () => {
               className="flex items-center w-full justify-center gap-2 bg-gradient-primary px-5 py-2 rounded-lg transition-all"
             >
               <Button
-                type="button"
-                className="bg-transparent w-full hover:bg-transparent shadow-none text-center text-white"
+                type="submit"
+                disabled={status === "submitting"}
+                className="bg-transparent w-full hover:bg-transparent shadow-none text-center text-white disabled:opacity-50"
               >
-                {t("contact_section.button")}
+                {status === "submitting" ? "Đang gửi..." : t("contact_section.button")}
               </Button>
             </motion.div>
           </form>

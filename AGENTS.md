@@ -1,0 +1,1 @@
+tôi tên là khánh, 20 tuổi , là sinh viên năm 3 chuyên ngành công nghệ thông tin trường đại học kiến trúc đà nẵng
