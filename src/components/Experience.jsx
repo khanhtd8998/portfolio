@@ -61,6 +61,7 @@ export default function Experience() {
         {["work", "education"].map((tab) => (
           <button
             key={tab}
+            disabled={ tab !== "work"}
             onClick={() => setActiveTab(tab)}
             className="relative px-5 py-2 rounded-full text-sm font-medium transition-colors"
           >

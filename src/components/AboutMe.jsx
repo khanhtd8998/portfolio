@@ -57,7 +57,7 @@ const AboutMe = () => {
         className="flex-shrink-0 hidden md:block"
       >
         <img
-          src="./avatar.jpg"
+          src="./avatar_fb.webp"
           alt="Profile"
           className="w-72 h-72 md:w-80 md:h-80 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.1)] object-cover"
         />
