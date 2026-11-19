@@ -7,12 +7,14 @@ import {
   User,
   Menu,
   X,
+  Play,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 import { SelectLanguage } from "./ui/component/SelectLanguage";
+import { RainbowButton } from "./ui/rainbow-button";
 
 const navItems = [
   { id: "home", name: "Home", icon: <Home size={18} /> },
@@ -161,9 +163,20 @@ export default function Header() {
                 </button>
               );
             })}
-            <div className="flex space-x-3">
+            <div className="flex items-center space-x-3">
               <AnimatedThemeToggler />
               <SelectLanguage />
+              <RainbowButton asChild className="size-10 rounded-full !bg-transparent" variant="outline">
+                <a
+                  href="https://game.miss.io.vn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Play game"
+                  onClick={() => setOpen(false)}
+                >
+                  <Play />
+                </a>
+              </RainbowButton>
             </div>
           </motion.nav>
         )}

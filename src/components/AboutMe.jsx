@@ -9,6 +9,7 @@ import {
   User
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { PixelImage } from "./ui/pixel-image";
 
 const AboutMe = () => {
   const { t } = useTranslation();
@@ -53,14 +54,22 @@ const AboutMe = () => {
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: false, amount: 0.3 }}
         className="flex-shrink-0 hidden md:block"
       >
-        <img
+        <PixelImage
+          src="./avatar_fb.webp"
+          grid="8x8"
+          alt="Profile"
+          pixelFadeInDuration={500}
+          maxAnimationDelay={500}
+          colorRevealDelay={500}
+        />
+        {/* <img
           src="./avatar_fb.webp"
           alt="Profile"
           className="w-72 h-72 md:w-80 md:h-80 rounded-2xl shadow-[0_10px_25px_rgba(0,0,0,0.1)] object-cover"
-        />
+        /> */}
       </motion.div>
 
       {/* Phần nội dung */}
@@ -121,7 +130,7 @@ const AboutMe = () => {
             className="flex items-center w-full justify-center sm:w-auto sm:justify-start gap-2 bg-gradient-primary text-white px-5 py-2 rounded-lg transition-all"
           >
             <a
-              href="https://s3.topcv.vn/data-cvs/topcv-cv-uploads/b3ab80a05be744e35667aaa727ef5e2e.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=s3-tp-topcv%2F20260609%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T160251Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=5e6d684f25d921ae464bf7420f360f84ca049968bedd16e80a10d88bc6c2b74a"
+              // href="https://s3.topcv.vn/data-cvs/topcv-cv-uploads/b3ab80a05be744e35667aaa727ef5e2e.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=s3-tp-topcv%2F20260609%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260609T160251Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=5e6d684f25d921ae464bf7420f360f84ca049968bedd16e80a10d88bc6c2b74a"
               download
               className="flex items-center gap-2"
               target="_blank"

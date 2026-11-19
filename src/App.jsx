@@ -11,6 +11,8 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { SelectLanguage } from "./components/ui/component/SelectLanguage";
 import { ScrollToTop } from "./components/ui/component/ScrollToTop";
+import { RainbowButton } from "./components/ui/rainbow-button";
+import { Play } from "lucide-react";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -62,6 +64,7 @@ function App() {
           <>
             <div className="relative z-10 p-6 md:p-10">
               <Header />
+
               <section id="home">
                 <Introduction />
               </section>
@@ -89,11 +92,23 @@ function App() {
             <AnimatePresence>
               {showScrollTop && <ScrollToTop />}
             </AnimatePresence>
-            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-8 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
+            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-30 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
+              <SelectLanguage />
+            </div>
+            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-18 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
               <AnimatedThemeToggler />
             </div>
-            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-20 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
-              <SelectLanguage />
+            <div className="size-10 hidden md:flex items-center justify-center fixed bottom-6 right-4 z-50 bg-white/95 dark:bg-black backdrop-blur-md dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-lg shadow-[var(--shadow-glow)] rounded-full">
+              <RainbowButton asChild className="size-10 rounded-full" variant="outline">
+                <a
+                  href="https://game.miss.io.vn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Play game"
+                >
+                  <Play />
+                </a>
+              </RainbowButton>
             </div>
           </>
         )}
