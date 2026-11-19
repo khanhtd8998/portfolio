@@ -105,6 +105,55 @@
     "technologies": "Technologies",
     "list": [
       {
+        "title": "ETL & Data Migration Platform",
+        "description": "Enterprise frontend for an ETL platform supporting SQL and NoSQL database migration workflows.",
+        "technologies": [
+          "React 18",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Ant Design",
+          "Zustand",
+          "React Query",
+          "AntV X6",
+          "CodeMirror",
+          "WebSockets (STOMPjs)"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": true,
+        "image": "./img_project/etl.PNG",
+        "responsibilities": [
+          "Built frontend modules for an ETL & data migration platform (SQL/NoSQL).",
+          "Implemented DAG flow designer (AntV X6) and in-browser SQL editor (CodeMirror).",
+          "Built real-time WebSocket dashboards with Zustand and React Query."
+        ]
+      },
+      {
+        "title": "OTC – Crypto Trading Platform",
+        "description": "Admin Dashboard and Landing Page for an OTC Crypto Trading platform with real-time order tracking.",
+        "technologies": [
+          "React",
+          "Vite",
+          "TypeScript",
+          "Apollo GraphQL",
+          "Zustand",
+          "Styled-components",
+          "Zod",
+          "i18next",
+          "Ant Design"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": true,
+        "image": "./img_project/otc.PNG",
+        "responsibilities": [
+          "Built Admin Dashboard with modules for user management, OTC trading approval, and CMS (news, banners).",
+          "Developed responsive Landing Page and Customer Portal (balance, OTC orders, transaction history).",
+          "Integrated real-time OTC order tracking via Apollo GraphQL & WebSockets."
+        ]
+      },
+      {
         "title": "Offering",
         "description": "A blockchain-based platform that connects investors and syndicates, enabling seamless fundraising and allocation trading.",
         "technologies": [

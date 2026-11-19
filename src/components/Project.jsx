@@ -100,8 +100,8 @@ export default function Project() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="absolute inset-0 bg-white/80 dark:bg-gray-600/80 backdrop-blur-sm rounded-xl text-black flex flex-col justify-center items-center px-4 opacity-0 hover:opacity-100 transition-opacity duration-300"
             >
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-3">
                   <img
                     src={proj.image}
                     alt={proj.title}
@@ -118,7 +118,7 @@ export default function Project() {
                 </div>
 
                 {/* Chi tiết như role / members / tasks */}
-                <ul className="text-gray-600 dark:text-gray-200 text-sm mb-3 list-disc pl-4">
+                <ul className="text-gray-600 dark:text-gray-200 text-sm list-disc pl-4">
                   {proj?.responsibilities?.map((item, index) => (
                     <li className="my-0.5" key={index}>
                       {item}

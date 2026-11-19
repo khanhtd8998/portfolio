@@ -105,8 +105,57 @@
     "technologies": "Công nghệ",
     "list": [
       {
+        "title": "ETL & Data Migration Platform",
+        "description": "Giao diện frontend cho nền tảng ETL di chuyển dữ liệu SQL/NoSQL.",
+        "technologies": [
+          "React 18",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Ant Design",
+          "Zustand",
+          "React Query",
+          "AntV X6",
+          "CodeMirror",
+          "WebSockets (STOMPjs)"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": true,
+        "image": "./img_project/etl.PNG",
+        "responsibilities": [
+          "Xây dựng frontend cho nền tảng ETL di chuyển dữ liệu SQL/NoSQL.",
+          "Tích hợp DAG flow designer (AntV X6) và SQL editor (CodeMirror).",
+          "Dashboard giám sát WebSocket thời gian thực với Zustand & React Query."
+        ]
+      },
+      {
+        "title": "OTC – Nền Tảng Giao Dịch Crypto",
+        "description": "Admin Dashboard & Customer Portal cho nền tảng OTC Crypto với theo dõi lệnh thời gian thực.",
+        "technologies": [
+          "React",
+          "Vite",
+          "TypeScript",
+          "Apollo GraphQL",
+          "Zustand",
+          "Styled-components",
+          "Zod",
+          "i18next",
+          "Ant Design"
+        ],
+        "live": "#",
+        "github": "#",
+        "featured": true,
+        "image": "./img_project/otc.PNG",
+        "responsibilities": [
+          "Xây dựng Admin Dashboard: quản lý người dùng, phê duyệt OTC, CMS.",
+          "Phát triển Landing Page & Customer Portal (số dư, lệnh OTC, lịch sử).",
+          "Theo dõi lệnh thời gian thực qua Apollo GraphQL & WebSockets."
+        ]
+      },
+      {
         "title": "Offering",
-        "description": "Một nền tảng dựa trên blockchain kết nối các nhà đầu tư và các tổ chức, cho phép gây quỹ và giao dịch phân bổ liền mạch.",
+        "description": "Một nền tảng dựa trên blockchain kết nối nhà đầu tư và tổ chức, hỗ trợ gây quỹ và giao dịch phân bổ.",
         "technologies": [
           "Next.js",
           "TailwindCSS",
@@ -118,10 +167,9 @@
         "featured": false,
         "image": "./img_project/offering.PNG",
         "responsibilities": [
-          "Xây dựng giao diện trang web sử dụng Next.js và MUI.",
-          "Thêm tính năng giao diện tối (dark-mode).",
-          "Kết nối dữ liệu API với các trang Trang chủ, Chi tiết, Thông báo và Người dùng.",
-          "Quản lý state toàn cục bằng Zustand, hiển thị tốt trên mọi thiết bị."
+          "Xây dựng UI với Next.js, kết nối API cho các trang chính.",
+          "Thêm dark mode, quản lý state với Zustand.",
+          "Responsive trên mọi thiết bị."
         ]
       },
       {
@@ -137,10 +185,8 @@
         "featured": false,
         "image": "./img_project/redkite.PNG",
         "responsibilities": [
-          "Thay đổi và cập nhật giao diện trang web.",
-          "Thiết kế lại bố cục và cải thiện cấu trúc trang.",
-          "Đảm bảo hiển thị tốt trên mọi thiết bị.",
-          "Quản lý state toàn cục bằng Redux."
+          "Cập nhật và thiết kế lại UI cho nền tảng DeFi/Token sale.",
+          "Quản lý state với Redux, responsive mọi thiết bị."
         ]
       },
       {
@@ -157,15 +203,13 @@
         "featured": false,
         "image": "./img_project/bestbike.PNG",
         "responsibilities": [
-          "Xây dựng giao diện xem xe đạp, địa điểm và vị trí hiện tại trên bản đồ.",
-          "Xây dựng giao diện với Shadcn UI và Tailwind CSS.",
-          "Kết nối API để đồng bộ dữ liệu xe đạp và địa điểm.",
-          "Quản lý state bằng MobX và hiển thị tốt trên mọi thiết bị."
+          "Xây dựng UI xem xe, địa điểm và vị trí trên bản đồ.",
+          "Kết nối API, quản lý state với MobX, responsive mọi thiết bị."
         ]
       },
       {
         "title": "Website Đặt Lịch Chăm Sóc Thú Cưng",
-        "description": "Một ứng dụng web được thiết kế để người dùng dễ dàng đặt các dịch vụ chăm sóc thú cưng.",
+        "description": "Ứng dụng web đặt dịch vụ chăm sóc thú cưng.",
         "technologies": [
           "React",
           "TailwindCSS",
@@ -177,14 +221,13 @@
         "featured": false,
         "image": "./img_project/miapet.PNG",
         "responsibilities": [
-          "Phát triển trang thông tin người dùng, trang cửa hàng chăm sóc thú cưng và đánh giá cửa hàng.",
-          "Quản lý thông tin người dùng và thú cưng trong hệ thống CMS.",
-          "Sử dụng ShadCN UI và Tailwind CSS để xây dựng UI, kết nối API và quản lý state với MobX, hiển thị tốt trên mọi thiết bị."
+          "Phát triển trang thông tin người dùng, cửa hàng thú cưng và đánh giá.",
+          "Kết nối API, quản lý state MobX, responsive mọi thiết bị."
         ]
       },
       {
         "title": "Omikuji Webapp",
-        "description": "Ứng dụng web cho phép người dùng thêm vật phẩm trên bản đồ hoặc thăm các địa điểm cụ thể để thu thập vật phẩm ảo.",
+        "description": "Ứng dụng web cho phép người dùng thêm vật phẩm trên bản đồ hoặc thăm địa điểm để thu thập vật phẩm ảo.",
         "technologies": [
           "React",
           "TailwindCSS",
@@ -199,9 +242,8 @@
         "featured": false,
         "image": "./img_project/omikuji.PNG",
         "responsibilities": [
-          "Phát triển hệ thống CMS để quản lý người dùng và đánh dấu vật phẩm trên bản đồ.",
-          "Tích hợp Web2Authen và FIDO để đăng nhập bảo mật.",
-          "Sử dụng ShadCN UI và Tailwind CSS để xây dựng UI, kết nối API và quản lý state với MobX, hiển thị tốt trên mọi thiết bị."
+          "Xây dựng CMS quản lý người dùng và vật phẩm trên bản đồ.",
+          "Tích hợp WebAuthn & FIDO2 đăng nhập bảo mật, responsive mọi thiết bị."
         ]
       },
       {
@@ -219,9 +261,8 @@
         "featured": false,
         "image": "https://images.viblo.asia/1a93ce50-73b2-4ab6-a71a-b8a29840214a.png",
         "responsibilities": [
-          "Phát triển các API cho các tính năng thương mại điện tử chính như sản phẩm, giỏ hàng, thanh toán và quản lý người dùng.",
-          "Kết nối với MongoDB để lưu trữ và lấy dữ liệu sản phẩm, đơn hàng và người dùng.",
-          "Sử dụng JWT để xác thực người dùng, phân quyền và thêm bảo mật để bảo vệ dữ liệu người dùng."
+          "Xây dựng API cho các tính năng TMĐT: sản phẩm, giỏ hàng, thanh toán.",
+          "Kết nối MongoDB, dùng JWT xác thực và phân quyền người dùng."
         ]
       }
     ]
