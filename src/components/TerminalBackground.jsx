@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 import { AnimatedSpan, Terminal, TypingAnimation } from "./ui/terminal";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const TerminalBackground = ({ onComplete }) => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const timer = setTimeout(() => {
       onComplete();
@@ -31,38 +34,38 @@ const TerminalBackground = ({ onComplete }) => {
       >
         <Terminal className="shadow-[0_10px_25px_rgba(0,0,0,0.1)] mx-4">
           <TypingAnimation duration={20}>
-            &gt; pnpm dlx shadcn@latest portfolio
+            {t("terminal.command")}
           </TypingAnimation>
           <AnimatedSpan className="text-green-500">
-            ✔ Preflight checks.
+            {t("terminal.preflight")}
           </AnimatedSpan>
           <AnimatedSpan className="text-green-500">
-            ✔ Updating Home
+            {t("terminal.updating_home")}
           </AnimatedSpan>
           <AnimatedSpan className="text-green-500">
-            ✔ Updating About
+            {t("terminal.updating_about")}
           </AnimatedSpan>
           <AnimatedSpan className="text-green-500">
-            ✔ Updating Experience
+            {t("terminal.updating_experience")}
           </AnimatedSpan>
           <AnimatedSpan className="text-green-500">
-            ✔ Updating Skill
+            {t("terminal.updating_skill")}
           </AnimatedSpan>
           <AnimatedSpan className="text-green-500">
-            ✔ Updating Contact
+            {t("terminal.updating_contact")}
           </AnimatedSpan>
           <AnimatedSpan className="text-green-500">
-            ✔ Installing dependencies.
+            {t("terminal.installing")}
           </AnimatedSpan>
           <AnimatedSpan className="text-blue-500">
-            <span>ℹ Updated 1 file:</span>
+            <span>{t("terminal.updated_file")}</span>
             <span className="pl-2">- lib/utils.ts</span>
           </AnimatedSpan>
           <TypingAnimation duration={15} className="text-muted-foreground">
-            Success! Project initialization completed.
+            {t("terminal.success")}
           </TypingAnimation>
           <TypingAnimation duration={15} className="text-muted-foreground">
-            Welcome to khanhtd8998's portfolio!
+            {t("terminal.welcome")}
           </TypingAnimation>
         </Terminal>
       </motion.section>

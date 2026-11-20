@@ -16,7 +16,9 @@ import { Play } from "lucide-react";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [isIntroDone, setIsIntroDone] = useState(false);
+  const [isIntroDone, setIsIntroDone] = useState(() => {
+    return localStorage.getItem("hasSeenIntro") === "true";
+  });
 
   const experienceRef = useRef(null);
 
@@ -44,6 +46,7 @@ function App() {
 
   const handleIntroEnd = () => {
     setIsIntroDone(true);
+    localStorage.setItem("hasSeenIntro", "true");
   };
 
   return (

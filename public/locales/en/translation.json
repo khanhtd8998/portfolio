@@ -290,5 +290,18 @@
       "message": "Your message..."
     },
     "button": "Send Message"
+  },
+  "terminal": {
+    "command": "> pnpm dlx shadcn@latest portfolio",
+    "preflight": "✔ Preflight checks.",
+    "updating_home": "✔ Updating Home",
+    "updating_about": "✔ Updating About",
+    "updating_experience": "✔ Updating Experience",
+    "updating_skill": "✔ Updating Skill",
+    "updating_contact": "✔ Updating Contact",
+    "installing": "✔ Installing dependencies.",
+    "updated_file": "ℹ Updated 1 file:",
+    "success": "Success! Project initialization completed.",
+    "welcome": "Welcome to khanhtd8998's portfolio!"
   }
 }

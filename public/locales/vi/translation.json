@@ -282,5 +282,18 @@
       "message": "Tin nhắn của bạn..."
     },
     "button": "Gửi tin nhắn"
+  },
+  "terminal": {
+    "command": "> pnpm dlx shadcn@latest portfolio",
+    "preflight": "✔ Kiểm tra khởi tạo",
+    "updating_home": "✔ Cập nhật Trang chủ",
+    "updating_about": "✔ Cập nhật Về tôi",
+    "updating_experience": "✔ Cập nhật Kinh nghiệm",
+    "updating_skill": "✔ Cập nhật Kỹ năng",
+    "updating_contact": "✔ Cập nhật Liên hệ",
+    "installing": "✔ Cài đặt các gói phụ thuộc.",
+    "updated_file": "ℹ Đã cập nhật 1 tệp:",
+    "success": "Thành công! Khởi tạo dự án hoàn tất.",
+    "welcome": "Chào mừng bạn đến với portfolio của khanhtd8998!"
   }
 }
